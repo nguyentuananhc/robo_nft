@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/**/*.{html,js,jsx}',
+    './src/**/*.{html,js,jsx,tsx}',
     'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
   ],
   theme: {
@@ -42,12 +42,14 @@ module.exports = {
         subpage_modal_body: 'linear-gradient(180deg, #0054D1 0%, #00D1FF 100%)',
         mobile_menu:
           'linear-gradient(180deg, #FFEA97 0%, #FFDB6A 59.37%, #FFCE4A 76.56%, #FFC133 87.5%, #FFA800 100%, #FFB320 100%)',
+        sidebar_linear: 'linear-gradient(180deg, rgba(23, 33, 84, 0) 0%, #172154 100%)'  
       },
       backgroundColor: {
         welcome: '#4fc7f7',
         tab: 'rgba(255, 255, 255, 0.4)',
         subpage_modal_overlay: 'rgba(24, 31, 81, 0.75)',
         subpage_modal_body: 'rgba(24, 31, 81, 0.1)',
+        sidebar_bgcolor: '#1E42D7'
       },
       fontFamily: {
         primary: 'ClashDisplay, sans-serif',
@@ -122,6 +124,10 @@ module.exports = {
           },
         },
       },
+      padding: {
+        pt4Important: '0.75rem !important',
+        pl6Important: '1.5rem !important'
+      }
     },
   },
   plugins: [require('flowbite/plugin')],
