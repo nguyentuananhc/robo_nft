@@ -206,7 +206,7 @@ const Sidebar = () => {
         }}
       >
         <Box style={{ flexGrow: 1 }}>
-          <Toolbar>
+          <Toolbar style={{ height: 66 }}>
             <img
               src={robocoLogo}
               alt="logo"
