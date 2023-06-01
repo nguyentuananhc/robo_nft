@@ -18,9 +18,10 @@ const Layout = () => {
 			flexDirection: 'row',
 			justifyContent: 'flex-start',
 			alignItems: 'flex-start',
+			height: '100%'
 		}}>
 			<Sidebar />
-			<div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
+			<div style={{ height: '100%', flexGrow: 1, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
 				<Appbar />
 				<Divider style={{ borderColor: '#E5ECF3'}}/>
 				<Outlet />

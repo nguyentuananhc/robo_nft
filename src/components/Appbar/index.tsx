@@ -12,7 +12,7 @@ const Appbar = ({
   styleContainer?: React.CSSProperties
 }) => {
   return (
-    <Box sx={{ flexGrow: 1, height: 66 }}>
+    <Box sx={{ flexGrow: 0, height: 66 }}>
       <AppBar
         position="static"
         style={{

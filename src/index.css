@@ -92,3 +92,8 @@
 * {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
+
+body, html, #root, .app {
+  height: 100%;
+  width: 100%;
+}
