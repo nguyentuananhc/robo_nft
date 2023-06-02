@@ -18,6 +18,7 @@ import {
 import React from 'react'
 import FilterBar from './FilterBar'
 import CardItem from './CardItem'
+import BottomBar from './BottomBar'
 
 console.log(
   'outlinedInputClasses.notchedOutline',
@@ -50,7 +51,13 @@ const theme = createTheme({
 const ToolWorking = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Box flexGrow="1" display="flex" flexDirection="column">
+      <Box
+        flexGrow="1"
+        display="flex"
+        flexDirection="column"
+        position="relative"
+        overflow="hidden"
+      >
         <Box>
           <FilterBar />
         </Box>
@@ -64,22 +71,19 @@ const ToolWorking = () => {
           style={{
             background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
           }}
+          overflow="auto"
         >
           <Grid container spacing={3}>
-            <Grid item xs={3}>
-              <CardItem />
-            </Grid>
-            <Grid item xs={3}>
-              <CardItem />
-            </Grid>
-            <Grid item xs={3}>
-              <CardItem />
-            </Grid>
-            <Grid item xs={3}>
-              <CardItem />
-            </Grid>
+            {Array.from({ length: 10 }).map((item, key) => {
+              return (
+                <Grid item xs={3} key={key}>
+                  <CardItem />
+                </Grid>
+              )
+            })}
           </Grid>
         </Box>
+        <BottomBar />
       </Box>
     </ThemeProvider>
   )

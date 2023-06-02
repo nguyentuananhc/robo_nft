@@ -7,6 +7,7 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { CardMedia, Chip } from '@mui/material'
 import RobotoItem from '../../../assets/images/RobotoItem.png'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 
 const styleText = {
   color: '#8FAECB',
@@ -14,9 +15,26 @@ const styleText = {
   fontSize: '10px',
 }
 
-const CardItem = () => {
+const styleNameCard = {
+  color: '#2A3141',
+  fontWeight: 700,
+  fontSize: 14,
+}
+
+const CardItem = ({
+  id,
+  text1,
+  text2,
+  text3,
+}: {
+  id?: string
+  text1?: string
+  text2?: string
+  text3?: string
+}) => {
   return (
-    <Card sx={{ width: '100%' }}>
+    <Card sx={{ width: '100%', position: 'relative' }}>
+      <CheckCircleIcon style={{ position: 'absolute', color: '#8FAECB', right: '14px', top: '14px'}} />
       <CardMedia
         width="240px"
         component="img"
@@ -24,10 +42,16 @@ const CardItem = () => {
         image={RobotoItem}
         alt="Paella dish"
       />
-      <CardContent>
-        <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center" marginBottom="4px">
+      <CardContent style={{ padding: 12 }}>
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+          marginBottom="4px"
+        >
           <Chip
-            label="#019024"
+            label={id || '#019024'}
             style={{
               fontSize: 10,
               fontWeight: 500,
@@ -36,16 +60,21 @@ const CardItem = () => {
               color: '#151519',
             }}
           />
-          <Typography sx={styleText} color="text.secondary" gutterBottom>
-            APY
+          <Typography sx={styleText} style={{ textAlign: 'right' }}>
+            {text1 || 'APY'}
           </Typography>
         </Box>
-        <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="center">
-          <Typography sx={styleText} color="text.secondary" gutterBottom>
-						Astronauto
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="space-between"
+          alignItems="center"
+        >
+          <Typography sx={styleNameCard} style={{ textAlign: 'left' }}>
+            {text2 || 'Astronauto'}
           </Typography>
-					<Typography sx={styleText} color="text.secondary" gutterBottom>
-					$4/m
+          <Typography sx={styleNameCard} style={{ textAlign: 'right' }}>
+            {text3 || '$4/m'}
           </Typography>
         </Box>
       </CardContent>
