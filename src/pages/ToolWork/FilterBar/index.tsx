@@ -10,8 +10,20 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material'
+import { TYPE } from '..'
 
-const FilterBar = () => {
+const FilterBar = ({
+  setSelectedType,
+  selectedType
+}: {
+  selectedType: TYPE,
+  setSelectedType: any,
+}) => {
+
+  const handleClick = (value: TYPE) => {
+    setSelectedType(value)
+  }
+
   return (
     <AppBar
       position="static"
@@ -44,15 +56,18 @@ const FilterBar = () => {
           >
             <Button
               style={{
-                backgroundColor: '#3C76F5',
+                backgroundColor: selectedType === TYPE.WORK ? '#3C76F5' : 'white',
                 paddingLeft: 16,
                 paddingRight: 16,
                 paddingTop: 8,
                 paddingBottom: 8,
               }}
+              onClick={() => {
+                handleClick(TYPE.WORK)
+              }}
             >
               <Typography
-                color="white"
+                color={selectedType === TYPE.WORK ? "white" : "#566E9F"}
                 variant="h5"
                 fontSize="14px"
                 fontWeight={700}
@@ -65,15 +80,18 @@ const FilterBar = () => {
             </Button>
             <Button
               style={{
-                backgroundColor: 'white',
+                backgroundColor: selectedType === TYPE.WORKING ? '#3C76F5' : 'white',
                 paddingLeft: 16,
                 paddingRight: 16,
                 paddingTop: 8,
                 paddingBottom: 8,
               }}
+              onClick={() => {
+                handleClick(TYPE.WORKING)
+              }}
             >
               <Typography
-                color="#566E9F"
+                color={selectedType === TYPE.WORKING ? "white" : "#566E9F"}
                 variant="h5"
                 fontSize="14px"
                 fontWeight={700}

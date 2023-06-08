@@ -3,7 +3,8 @@ import React from 'react';
 import Layout from "./components/Layout";
 import { PARENT_URL } from "./constants";
 import WalletConnectionModal from "./components/Modal/WalletConnectionModal";
-import ToolWorking from "./pages/ToolWorking";
+import ToolWorking from "./pages/ToolWork";
+import Swap from "./pages/Swap";
 
 const routerList: Array<RouteObject> =  [
 	{
@@ -17,6 +18,10 @@ const routerList: Array<RouteObject> =  [
 			{
 				path: `${PARENT_URL.dapp}/tool/working`,
 				element: <ToolWorking />
+			},
+			{
+				path: `${PARENT_URL.dapp}/swap`,
+				element: <Swap />
 			}
 		],
 	},

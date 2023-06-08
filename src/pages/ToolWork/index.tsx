@@ -15,15 +15,13 @@ import {
   outlinedInputClasses,
   selectClasses,
 } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import FilterBar from './FilterBar'
 import CardItem from './CardItem'
 import BottomBar from './BottomBar'
+import Work from './Work'
+import Working from './Working'
 
-console.log(
-  'outlinedInputClasses.notchedOutline',
-  outlinedInputClasses.notchedOutline
-)
 
 const theme = createTheme({
   components: {
@@ -48,7 +46,21 @@ const theme = createTheme({
   },
 })
 
+export interface CardItemInterface {
+  id: string
+  [index: string]: any
+}
+
+export enum TYPE {
+  WORK = 'WORK',
+  WORKING = 'WORKING'
+
+}
+
 const ToolWorking = () => {
+
+  const [selectedType, setSelectedType]  = useState<TYPE>(TYPE.WORK);
+
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -59,31 +71,12 @@ const ToolWorking = () => {
         overflow="hidden"
       >
         <Box>
-          <FilterBar />
+          <FilterBar selectedType={selectedType} setSelectedType={setSelectedType} key={selectedType} />
         </Box>
         <Divider style={{ borderColor: '#E5ECF3' }} />
-        <Box
-          paddingLeft="72px"
-          paddingRight="72px"
-          paddingTop="24px"
-          paddingBottom="24px"
-          flexGrow="1"
-          style={{
-            background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
-          }}
-          overflow="auto"
-        >
-          <Grid container spacing={3}>
-            {Array.from({ length: 10 }).map((item, key) => {
-              return (
-                <Grid item xs={3} key={key}>
-                  <CardItem />
-                </Grid>
-              )
-            })}
-          </Grid>
-        </Box>
-        <BottomBar />
+        {
+          selectedType === TYPE.WORK ? <Work /> : <Working />
+        }
       </Box>
     </ThemeProvider>
   )
