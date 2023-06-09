@@ -1,0 +1,20 @@
+# Vite build output
+/dist/
+/.vercel/
+/.netlify/
+/.firebase/
+build/
+
+# Node.js dependencies
+/node_modules/
+
+# IDE and editor files
+/.vscode/
+/.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*.bak
+*~

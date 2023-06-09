@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+}
+
+/* @font-face {
   font-family: 'ClashDisplay';
   src: url('@assets/fonts/ClassDisplay/ClashDisplay-Variable.woff2')
       format('woff2'),
@@ -22,7 +27,7 @@
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
-}
+} */
 
 @layer base {
   html {
