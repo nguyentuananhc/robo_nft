@@ -1,5 +1,5 @@
 import React from 'react'
-import chart from '@assets/robo/chart.png'
+import chart from '@assets/robo/chartToken.png'
 import tokenRobot from '@assets/robo/tokenRobot.png'
 
 function Token() {
