@@ -1,5 +1,5 @@
 import React from 'react'
-import Chart from '@assets/robo/chart.png'
+import chart from '@assets/robo/chart.png'
 import tokenRobot from '@assets/robo/tokenRobot.png'
 
 function Token() {
@@ -14,7 +14,7 @@ function Token() {
       }}
     >
       <div className="flex items-center pt-20">
-        <img className="mr-40 h-auto w-[458px]" src={Chart} />
+        <img className="mr-40 h-auto w-[458px]" src={chart} />
         <div
           className="flex flex-1 flex-col"
           style={{
