@@ -1,5 +1,5 @@
 import React from 'react'
-import introducing from '@assets/robo/introducing.png'
+import introducing from '@assets/robo/intro.png'
 
 function OurRevolutionary() {
   return (
