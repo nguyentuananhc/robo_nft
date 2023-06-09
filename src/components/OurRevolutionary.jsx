@@ -1,5 +1,5 @@
 import React from 'react'
-import Introducing from '@assets/robo/introducing.png'
+import introducing from '@assets/robo/introducing.png'
 
 function OurRevolutionary() {
   return (
@@ -97,7 +97,7 @@ function OurRevolutionary() {
           </div>
         </div>
         <div className="flex w-full items-center justify-center">
-          <img src={Introducing} alt="" />
+          <img src={introducing} alt="" />
         </div>
       </div>
     </section>
