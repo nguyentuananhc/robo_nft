@@ -9,7 +9,7 @@ import SocialLink from '../components/SocialLink'
 import twitter from '@assets/images/twitter.svg'
 import telegram from '@assets/images/telegram.svg'
 import discord from '@assets/images/discord.svg'
-import rectangle from '@assets/robo/rectangle.png'
+import rectangle from '@assets/robo/rect.png'
 import robo from '@assets/robo/robo.png'
 
 import Button from '../components/Button'
