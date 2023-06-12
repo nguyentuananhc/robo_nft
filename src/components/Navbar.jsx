@@ -19,15 +19,23 @@ const Navbar = ({ onLinkClick }) => {
 
   return (
     <header className="relative pt-3 xl:pt-7">
-      <div className="flex flex-wrap items-center justify-between gap-[20px] md:justify-start">
+      <div className="flex w-full flex-wrap items-center justify-between gap-[20px] md:justify-between">
         <a href="/">
-          <div className="sr-only">NFTCloud</div>
-          <img src={logo} alt="NFTCloud" className="w-[90px] xl:w-[180px]" />
+          <a
+            href="/explore-our-robots"
+            className="font-semibold text-white"
+            onClick={() => {
+              setOpen(false)
+              onLinkClick && onLinkClick()
+            }}
+          >
+            roboco
+          </a>
         </a>
 
         <button
           type="button"
-          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-primary focus:outline-none md:hidden"
+          className="ml-3 inline-flex items-center rounded-lg p-2 text-sm text-white focus:outline-none md:hidden"
           onClick={() => {
             setOpen(!open)
             console.log('LoL')
@@ -53,36 +61,46 @@ const Navbar = ({ onLinkClick }) => {
           className="top-full left-0 hidden w-full md:block md:w-auto"
           id="nav"
         >
-          <nav className="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-lg md:mt-0 md:flex-row md:gap-6 md:bg-transparent md:shadow-none">
+          <nav className="flex flex-col items-center gap-4 rounded-lg bg-white p-4 shadow-lg md:mt-0 md:flex-row md:gap-6 md:bg-transparent md:shadow-none">
             <a
-              href="#cloud-studio"
-              className="font-primary font-semibold text-primary"
+              href="/"
+              className="font-semibold text-white"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()
               }}
             >
-              CloudStudio
+              Home
             </a>
             <a
-              href="#enchanting-collection"
-              className="font-primary font-semibold text-primary"
+              href="/explore-our-robots"
+              className="font-semibold text-white"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()
               }}
             >
-              Enchanting Collection
+              Explore Our Robots
             </a>
             <a
-              href="#about-us"
-              className="font-primary font-semibold text-primary"
+              href="/docs"
+              className="font-semibold text-white"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()
               }}
             >
-              About us
+              Docs
+            </a>
+            <a
+              href="/explore-app"
+              className="rounded bg-[#2455EA] p-2 font-semibold text-white"
+              onClick={() => {
+                setOpen(false)
+                onLinkClick && onLinkClick()
+              }}
+            >
+              Explore App
             </a>
           </nav>
         </div>
@@ -128,7 +146,7 @@ const Navbar = ({ onLinkClick }) => {
 
                 <a
                   href="/"
-                  className="p-3 font-primary font-bold text-primary"
+                  className="p-3 font-bold text-primary"
                   onClick={() => {
                     setOpen(false)
                     onLinkClick && onLinkClick()
@@ -138,7 +156,7 @@ const Navbar = ({ onLinkClick }) => {
                 </a>
                 <a
                   href="#cloud-studio"
-                  className="p-3 font-primary font-bold text-primary"
+                  className="p-3 font-bold text-primary"
                   onClick={() => {
                     setOpen(false)
                     onLinkClick && onLinkClick()
@@ -148,7 +166,7 @@ const Navbar = ({ onLinkClick }) => {
                 </a>
                 <a
                   href="#enchanting-collection"
-                  className="p-3 font-primary font-bold text-primary"
+                  className="p-3 font-bold"
                   onClick={() => {
                     setOpen(false)
                     onLinkClick && onLinkClick()
@@ -158,7 +176,7 @@ const Navbar = ({ onLinkClick }) => {
                 </a>
                 <a
                   href="#about-us"
-                  className="p-3 font-primary font-bold text-primary"
+                  className="p-3 font-bold text-primary"
                   onClick={() => {
                     setOpen(false)
                     onLinkClick && onLinkClick()
@@ -167,47 +185,6 @@ const Navbar = ({ onLinkClick }) => {
                   About us
                 </a>
               </nav>
-
-              <div className="mb-8 flex flex-col items-center gap-4">
-                <div className="flex gap-4">
-                  <a
-                    href=""
-                    className="block h-[52px] w-[52px] rounded-lg bg-primary p-4"
-                    onClick={() => {
-                      setOpen(false)
-                      onLinkClick && onLinkClick()
-                    }}
-                  >
-                    <span className="sr-only">NFTCloud on Telegram</span>
-                    <img src={telegram} alt="NFTCloud on Telegram" />
-                  </a>
-                  <a
-                    href=""
-                    className="block h-[52px] w-[52px] rounded-lg bg-primary p-4"
-                    onClick={() => {
-                      setOpen(false)
-                      onLinkClick && onLinkClick()
-                    }}
-                  >
-                    <span className="sr-only">NFT on Twitter</span>
-                    <img src={twitter} alt="NFT on Twitter" />
-                  </a>
-                  <a
-                    href=""
-                    className="block h-[52px] w-[52px] rounded-lg bg-primary p-4"
-                    onClick={() => {
-                      setOpen(false)
-                      onLinkClick && onLinkClick()
-                    }}
-                  >
-                    <div className="sr-only">NFTCloud Discord</div>
-                    <img src={discord} alt="NFTCloud Discord" />
-                  </a>
-                </div>
-                <div className="font-secondary text-[14px] font-semibold">
-                  All rights reserved - ©2023 NFTCloud
-                </div>
-              </div>
             </motion.div>
           )}
         </AnimatePresence>

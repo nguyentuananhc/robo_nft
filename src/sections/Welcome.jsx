@@ -9,37 +9,54 @@ import SocialLink from '../components/SocialLink'
 import twitter from '@assets/images/twitter.svg'
 import telegram from '@assets/images/telegram.svg'
 import discord from '@assets/images/discord.svg'
+import rectangle from '@assets/robo/rect.png'
+import robo from '@assets/robo/robo.png'
+
 import Button from '../components/Button'
 
 const Welcome = () => {
   return (
-    <section className="overflow-x-hidden bg-welcome xl:min-h-[900px]">
+    <section
+      style={{
+        position: 'relative',
+        background:
+          'linear-gradient(180deg, #0C112C 0%, rgba(12, 17, 44, 0) 100%), linear-gradient(180deg, #0C112C 0%, rgba(12, 17, 44, 0) 100%), #2455EA',
+        // backgroundImage: `url(${bg})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center center',
+        backgroundSize: 'cover',
+      }}
+      className="overflow-x-hidden xl:min-h-[700px]"
+    >
       <Container className="relative">
-        <img
-          src={cloud}
-          className="absolute top-0 -left-[50px] z-0 max-w-[475px] xl:-top-[281px] xl:-left-[300px] xl:max-w-[1581px]"
-        />
-
         <Navbar />
-
         <div className="relative z-10 flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between">
-          <WelcomeHeros />
+          {/* <WelcomeHeros /> */}
 
-          <div className="mb-[37px] xl:mt-[205px] xl:mb-0 xl:w-[502px]">
-            <div className="mb-6 flex flex-col gap-6 xl:mb-[67px] ">
-              <h1 className="font-primary text-[42px] font-bold leading-heading text-primary xl:text-[64px]">
-                Welcome to NFTCloud
+          <div className="mb-[37px] max-w-[696px] xl:mt-[160px] xl:mb-0 xl:w-[696px]">
+            <div className="mb-6 flex flex-col gap-6 xl:mb-[24px]">
+              <h1 className="text-[42px] font-bold leading-heading text-white xl:text-[42px]">
+                Revolutionizing the World with{' '}
+                <b className="text-[#78CEFF]">Robotics</b> and{' '}
+                <b className="text-[#78CEFF]">AI Technology</b>
               </h1>
-              <p className="font-secondary text-[14px] font-semibold leading-[1.61] text-primary xl:text-[18px] xl:leading-[1.5]">
-                Explore the Suite of Tools for all Web3 Entrepreneurs, Users,
-                Creators, and Enthusiasts in the CloudStudio; and browse the
-                Enchanting Boxes Collection amid the clouds!
+              <p className="leading-[1.61] text-white xl:text-[18px] xl:leading-[1.5]">
+                Join RoboCo to leverage the power of AI and Blockchain to build
+                an innovative future today!
               </p>
             </div>
-
+            <div className="mb-[160px] flex">
+              <a
+                href="/explore-app"
+                className="rounded bg-[#2455EA] p-2 font-semibold text-white"
+                onClick={() => {}}
+              >
+                Explore App
+              </a>
+            </div>
+            {/* 
             <div className="flex gap-4">
               <Button>ENTER APP</Button>
-
               <SocialLink href="/" className="bg-socialLight">
                 <img src={telegram} alt="" />
               </SocialLink>
@@ -49,10 +66,16 @@ const Welcome = () => {
               <SocialLink href="/" className="bg-socialLight">
                 <img src={discord} alt="" />
               </SocialLink>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>
+      <img
+        className="absolute bottom-[-1px] left-0"
+        src={rectangle}
+        alt="rectangle"
+      />
+      <img className="absolute bottom-0 right-[-30px]" src={robo} alt="robo" />
     </section>
   )
 }

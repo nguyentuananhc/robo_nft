@@ -7,8 +7,13 @@ import ToolWorking from "./pages/ToolWork";
 import Swap from "./pages/Swap";
 import Market from "./pages/Market";
 import Portfolio from "./pages/Portfolio";
+import LandingPage from "./pages/LandingPage";
 
 const routerList: Array<RouteObject> =  [
+	{
+		path: '/',
+		element: <LandingPage />
+	},
 	{
 		path: PARENT_URL.dapp,
 		element: <Layout />,

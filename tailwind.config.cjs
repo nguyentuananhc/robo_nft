@@ -13,6 +13,9 @@ module.exports = {
       xxl: '1440px',
     },
     extend: {
+      background: {
+        nav: 'linear-gradient(180deg, #0C112C 0%, rgba(12, 17, 44, 0) 100%), linear-gradient(180deg, #0C112C 0%, rgba(12, 17, 44, 0) 100%), #2455EA',
+      },
       backgroundImage: {
         welcome:
           'radial-gradient(92.11% 92.11% at 25.07% 7.89%, #fff7d6 3.65%, rgba(255, 255, 255, 0) 100%)',
@@ -63,6 +66,7 @@ module.exports = {
       boxShadow: {
         tab: '0px 4px 8px rgba(24, 31, 81, 0.1)',
         faq: '0px 4px 8px rgba(24, 31, 81, 0.1)',
+        tag: '0px 0px 20px rgba(36, 85, 234, 0.2)',
       },
       colors: {
         primary: '#181f51',
