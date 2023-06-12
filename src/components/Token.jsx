@@ -1,8 +1,49 @@
 import React from 'react'
 import chart from '@assets/robo/chartToken.png'
+import chart40 from '@assets/robo/chart40.png'
+import chart20 from '@assets/robo/chart20.png'
+import chart18 from '@assets/robo/chart18.png'
+import chart10 from '@assets/robo/chart10.png'
+import chart7 from '@assets/robo/chart7.png'
+import chart5 from '@assets/robo/chart5.png'
 import tokenRobot from '@assets/robo/token.png'
 
 function Token() {
+  const [chartToken, setChartToken] = React.useState(chart)
+  const [currentChart, setCurrentChart] = React.useState(null)
+
+  const handleMouseEnter = (percent) => {
+    setCurrentChart(percent)
+    switch (percent) {
+      case 40:
+        setChartToken(chart40)
+        break
+      case 20:
+        setChartToken(chart20)
+        break
+      case 18:
+        setChartToken(chart18)
+        break
+      case 10:
+        setChartToken(chart10)
+        break
+      case 7:
+        setChartToken(chart7)
+        break
+      case 5:
+        setChartToken(chart5)
+        break
+      default:
+        setChartToken(chart)
+        break
+    } // end switch
+  }
+
+  const handleMouseLeave = () => {
+    setChartToken(chart)
+    setCurrentChart(null)
+  }
+
   return (
     <section
       className="pb-16 pl-36"
@@ -13,10 +54,16 @@ function Token() {
         height: 720,
       }}
     >
-      <div className="flex items-center pt-20">
-        <img className="mr-40 h-auto w-[458px]" src={chart} />
+      <div className="flex items-center justify-end pt-20">
+        <img
+          className="mr-40 h-[458px] w-[458px]"
+          style={{
+            transition: 'opacity 0.3s ease',
+          }}
+          src={chartToken}
+        />
         <div
-          className="flex flex-1 flex-col"
+          className="flex flex-col"
           style={{
             backgroundImage: `url(${tokenRobot})`,
             backgroundRepeat: 'no-repeat',
@@ -24,7 +71,7 @@ function Token() {
             backgroundSize: 'contain',
           }}
         >
-          <div className="w-[380px]">
+          <div className="w-[380px] max-lg:w-[700px]">
             <h2 className="w-[263px] text-[42px] font-bold">Tokenomics</h2>
             <p className="mt-6 mb-10">
               We foster a decentralized ecosystem where tokens drive ownership,
@@ -32,18 +79,27 @@ function Token() {
             </p>
           </div>
 
-          <div className="flex w-[580px] flex-col gap-6">
+          <div
+            className="flex w-[580px] flex-col gap-6"
+            onMouseLeave={handleMouseLeave}
+          >
             <div className="flex">
               <div
                 style={{ borderLeft: '6px solid #3C76F5' }}
-                className="w-[50%] pl-2"
+                className={`w-[50%] cursor-pointer pl-2 hover:text-[#3C76F5] ${
+                  currentChart !== 40 && currentChart && 'text-[#6180AF]'
+                }`}
+                onMouseEnter={() => handleMouseEnter(40)}
               >
                 <p className="font-semibold">Community Rewards</p>
                 <p className="text-2xl font-bold">40%</p>
               </div>
               <div
                 style={{ borderLeft: '6px solid #1F37AE' }}
-                className="w-[50%] pl-2"
+                className={`w-[50%] cursor-pointer pl-2 hover:text-[#3C76F5] ${
+                  currentChart !== 10 && currentChart && 'text-[#6180AF]'
+                }`}
+                onMouseEnter={() => handleMouseEnter(10)}
               >
                 <p className="font-semibold">Team</p>
                 <p className="text-2xl font-bold">10%</p>
@@ -52,14 +108,20 @@ function Token() {
             <div className="flex">
               <div
                 style={{ borderLeft: '6px solid #2455EA' }}
-                className="w-[50%] pl-2"
+                className={`w-[50%] cursor-pointer pl-2 hover:text-[#3C76F5] ${
+                  currentChart !== 20 && currentChart && 'text-[#6180AF]'
+                }`}
+                onMouseEnter={() => handleMouseEnter(20)}
               >
                 <p className="font-semibold">Ecosystem Fund</p>
                 <p className="text-2xl font-bold">20%</p>
               </div>
               <div
                 style={{ borderLeft: '6px solid #1E338A' }}
-                className="w-[50%] pl-2"
+                className={`w-[50%] cursor-pointer pl-2 hover:text-[#3C76F5] ${
+                  currentChart !== 7 && currentChart && 'text-[#6180AF]'
+                }`}
+                onMouseEnter={() => handleMouseEnter(7)}
               >
                 <p className="font-semibold">Advisor</p>
                 <p className="text-2xl font-bold">7%</p>
@@ -68,14 +130,20 @@ function Token() {
             <div className="flex">
               <div
                 style={{ borderLeft: '6px solid #1E42D7' }}
-                className="w-[50%] pl-2"
+                className={`w-[50%] cursor-pointer pl-2 hover:text-[#3C76F5] ${
+                  currentChart !== 18 && currentChart && 'text-[#6180AF]'
+                }`}
+                onMouseEnter={() => handleMouseEnter(18)}
               >
                 <p className="font-semibold">Marketing & Partnership</p>
                 <p className="text-2xl font-bold">18%</p>
               </div>
               <div
                 style={{ borderLeft: '6px solid #172154' }}
-                className="w-[50%] pl-2"
+                className={`w-[50%] cursor-pointer pl-2 hover:text-[#3C76F5] ${
+                  currentChart !== 5 && currentChart && 'text-[#6180AF]'
+                }`}
+                onMouseEnter={() => handleMouseEnter(5)}
               >
                 <p className="font-semibold">Liquidity & MM</p>
                 <p className="text-2xl font-bold">5%</p>

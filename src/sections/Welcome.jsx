@@ -21,7 +21,6 @@ const Welcome = () => {
         position: 'relative',
         background:
           'linear-gradient(180deg, #0C112C 0%, rgba(12, 17, 44, 0) 100%), linear-gradient(180deg, #0C112C 0%, rgba(12, 17, 44, 0) 100%), #2455EA',
-        // backgroundImage: `url(${bg})`,
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center center',
         backgroundSize: 'cover',

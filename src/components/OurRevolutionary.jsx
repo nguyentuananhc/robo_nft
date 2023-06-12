@@ -161,7 +161,7 @@ function OurRevolutionary() {
           </>
         ))}
       </div>
-      <div className="flex gap-10">
+      <div className="flex justify-between gap-10">
         <div className="flex flex-col py-14 pl-36">
           <h2 className="w-[194px] text-[42px] font-bold capitalize text-white">
             {currentMenu?.name || ''}
