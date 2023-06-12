@@ -16,7 +16,10 @@ import {
 import React, { useState } from 'react'
 import downicon from '../../assets/images/downicon.png'
 import SwapIcon from '../../assets/images/SwapIcon.png'
+import SettingIcon from '../../assets/images/settingIcon.png';
 import SwapTab from './SwapTab'
+import SettingModal from './SettingModal';
+import LiquidityTab from './LiquidityTab';
 
 const styleContainer = {
   background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
@@ -39,6 +42,7 @@ enum TAB {
 
 const Swap = () => {
   const [tab, setTab] = useState<TAB>(TAB.SWAP)
+  const [openSetting, setOpenSetting] = useState(false);
 
 	const handleSetTab = (v: TAB) => {
 		setTab(v);
@@ -84,10 +88,24 @@ const Swap = () => {
               Liquidity
             </Typography>
           </Box>
+          <img src={SettingIcon} height="20px" width="20px" onClick={() => {
+            setOpenSetting(true)
+          }} />
         </Box>
         <Divider />
         {tab === 1 && <SwapTab />}
+        {tab === 2 && <LiquidityTab />}
       </Card>
+      {
+        openSetting && (
+          <SettingModal
+            open={openSetting}
+            handleClose={() => {
+              setOpenSetting(false);
+            }}
+          />
+        )
+      }
     </Box>
   )
 }

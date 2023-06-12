@@ -18,14 +18,15 @@ import downicon from '../../assets/images/downicon.png'
 import SwapIcon from '../../assets/images/SwapIcon.png'
 import SelectTokenModal from './SelectTokenModal'
 
-const fromToText = {
+
+export const fromToText = {
   color: '#6180AF',
   fontWeight: '600',
   fontSize: '10px',
   lineHeight: '13px',
 }
 
-const balanceText = {
+export const balanceText = {
   fontWeight: 500,
   fontSize: '10px',
   lineHeight: '13px',
