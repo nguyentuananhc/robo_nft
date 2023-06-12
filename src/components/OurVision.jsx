@@ -1,7 +1,43 @@
 import React from 'react'
 import bgVision from '@assets/robo/bg-vision.png'
+import Marquee from 'react-fast-marquee'
+
+const LIST = [
+  'Home Assist',
+  'Education',
+  'Logistics',
+  'Warehouse',
+  'Manufacturing',
+  'Healthcare',
+  'Scientific Research',
+  'Construction',
+]
+
+function getRandomElements(array, count) {
+  // Copy the original array to avoid modifying it
+  const copiedArray = [...array]
+
+  // Create a new array to store the randomly selected elements
+  const randomElements = []
+
+  // Iterate until the desired count is reached or the array is empty
+  while (randomElements.length < count && copiedArray.length > 0) {
+    // Generate a random index within the remaining array length
+    const randomIndex = Math.floor(Math.random() * copiedArray.length)
+
+    // Remove the randomly selected element from the copied array
+    const [randomElement] = copiedArray.splice(randomIndex, 1)
+
+    // Add the randomly selected element to the result array
+    randomElements.push(randomElement)
+  }
+
+  return randomElements
+}
 
 function OurVision() {
+  const randomElements = getRandomElements(LIST, 3)
+
   return (
     <section
       style={{
@@ -38,39 +74,69 @@ function OurVision() {
         </div>
       </div>
       <div className="flex h-[160px] w-full flex-col gap-6">
-        <div className="flex h-[36px] w-full gap-10">
-          {Array(14)
-            .fill()
-            .map((item) => {
-              return (
-                <span className="rounded-[56px] bg-white px-4 py-2 text-[#8FAECB] shadow-tag">
-                  Roboco
-                </span>
-              )
-            })}
-        </div>
-        <div className="flex h-[36px] w-full gap-10">
-          {Array(14)
-            .fill()
-            .map((item) => {
-              return (
-                <span className="rounded-[56px] bg-white px-4 py-2 text-[#8FAECB] shadow-tag">
-                  Roboco
-                </span>
-              )
-            })}
-        </div>
-        <div className="flex h-[36px] w-full gap-10">
-          {Array(14)
-            .fill()
-            .map((item) => {
-              return (
-                <span className="rounded-[56px] bg-white px-4 py-2 text-[#8FAECB] shadow-tag">
-                  Roboco
-                </span>
-              )
-            })}
-        </div>
+        <Marquee
+          direction="right"
+          speed={70}
+          className="flex h-[36px]"
+          autoFill
+          pauseOnHover
+        >
+          {LIST.map((item) => {
+            return (
+              <span
+                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold ${
+                  randomElements?.includes(item)
+                    ? 'text-[#2455EA]'
+                    : 'text-[#8FAECB]'
+                } shadow-tag hover:text-[#2455EA]`}
+              >
+                {item}
+              </span>
+            )
+          })}
+        </Marquee>
+        <Marquee
+          direction="left"
+          speed={30}
+          className="flex h-[36px]"
+          autoFill
+          pauseOnHover
+        >
+          {LIST.map((item) => {
+            return (
+              <span
+                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold ${
+                  randomElements?.includes(item)
+                    ? 'text-[#2455EA]'
+                    : 'text-[#8FAECB]'
+                } shadow-tag hover:text-[#2455EA]`}
+              >
+                {item}
+              </span>
+            )
+          })}
+        </Marquee>
+        <Marquee
+          direction="right"
+          speed={50}
+          className="flex h-[36px]"
+          autoFill
+          pauseOnHover
+        >
+          {LIST.map((item) => {
+            return (
+              <span
+                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold ${
+                  randomElements?.includes(item)
+                    ? 'text-[#2455EA]'
+                    : 'text-[#8FAECB]'
+                } shadow-tag hover:text-[#2455EA]`}
+              >
+                {item}
+              </span>
+            )
+          })}
+        </Marquee>
       </div>
       <div className="mt-[100px] flex w-full items-center justify-center">
         <a

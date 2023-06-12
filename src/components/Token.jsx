@@ -51,14 +51,14 @@ function Token() {
             </div>
             <div className="flex">
               <div
-                style={{ borderLeft: '6px solid #3C76F5' }}
+                style={{ borderLeft: '6px solid #2455EA' }}
                 className="w-[50%] pl-2"
               >
                 <p className="font-semibold">Ecosystem Fund</p>
                 <p className="text-2xl font-bold">20%</p>
               </div>
               <div
-                style={{ borderLeft: '6px solid #1F37AE' }}
+                style={{ borderLeft: '6px solid #1E338A' }}
                 className="w-[50%] pl-2"
               >
                 <p className="font-semibold">Advisor</p>
@@ -67,14 +67,14 @@ function Token() {
             </div>
             <div className="flex">
               <div
-                style={{ borderLeft: '6px solid #3C76F5' }}
+                style={{ borderLeft: '6px solid #1E42D7' }}
                 className="w-[50%] pl-2"
               >
                 <p className="font-semibold">Marketing & Partnership</p>
                 <p className="text-2xl font-bold">18%</p>
               </div>
               <div
-                style={{ borderLeft: '6px solid #1F37AE' }}
+                style={{ borderLeft: '6px solid #172154' }}
                 className="w-[50%] pl-2"
               >
                 <p className="font-semibold">Liquidity & MM</p>
