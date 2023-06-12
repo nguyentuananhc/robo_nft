@@ -23,7 +23,7 @@ const Navbar = ({ onLinkClick }) => {
         <a href="/">
           <a
             href="/explore-our-robots"
-            className="font-semibold text-white"
+            className="font-semibold text-white xl:text-xs xxl:text-base"
             onClick={() => {
               setOpen(false)
               onLinkClick && onLinkClick()
@@ -64,7 +64,7 @@ const Navbar = ({ onLinkClick }) => {
           <nav className="flex flex-col items-center gap-4 rounded-lg bg-white p-4 shadow-lg md:mt-0 md:flex-row md:gap-6 md:bg-transparent md:shadow-none">
             <a
               href="/"
-              className="font-semibold text-white"
+              className="font-semibold text-white xl:text-xs xxl:text-base"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()
@@ -74,7 +74,7 @@ const Navbar = ({ onLinkClick }) => {
             </a>
             <a
               href="/explore-our-robots"
-              className="font-semibold text-white"
+              className="font-semibold text-white xl:text-xs xxl:text-base"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()
@@ -84,7 +84,7 @@ const Navbar = ({ onLinkClick }) => {
             </a>
             <a
               href="/docs"
-              className="font-semibold text-white"
+              className="font-semibold text-white xl:text-xs xxl:text-base"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()
@@ -94,7 +94,7 @@ const Navbar = ({ onLinkClick }) => {
             </a>
             <a
               href="/explore-app"
-              className="rounded bg-[#2455EA] p-2 font-semibold text-white"
+              className="rounded bg-[#2455EA] p-2 font-semibold text-white xl:text-xs xxl:text-base"
               onClick={() => {
                 setOpen(false)
                 onLinkClick && onLinkClick()

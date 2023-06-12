@@ -134,13 +134,13 @@ function OurRevolutionary() {
         flexDirection: 'column',
       }}
     >
-      <div className="flex gap-4 px-36 py-14">
-        <h2 className="text-[42px] font-bold text-white">
+      <div className="flex gap-4 px-36 pt-14">
+        <h2 className="font-bold text-white xl:text-[28px] xxl:text-[42px]">
           Our Revolutionary Robots
         </h2>
       </div>
       <div
-        className="flex h-[70px] justify-between px-36"
+        className="flex h-[70px] justify-between px-36 "
         style={{ borderBottom: '2px solid #4A5C83' }}
       >
         {menu.map((item) => (
@@ -152,7 +152,7 @@ function OurRevolutionary() {
                   item.status === 'active' ? 'white' : '#4A5C83'
                 } `,
               }}
-              className={`flex h-[70px] cursor-pointer items-center justify-center font-bold text-${
+              className={`flex h-[70px] cursor-pointer items-center justify-center font-bold xl:text-xs xxl:text-base text-${
                 item.status === 'active' ? 'white' : '[#4A5C83]'
               }`}
             >
@@ -163,10 +163,10 @@ function OurRevolutionary() {
       </div>
       <div className="flex justify-between gap-10">
         <div className="flex flex-col py-14 pl-36">
-          <h2 className="w-[194px] text-[42px] font-bold capitalize text-white">
+          <h2 className="font-bold capitalize text-white xl:text-[28px] xxl:w-[194px] xxl:text-[42px]">
             {currentMenu?.name || ''}
           </h2>
-          <div className="mt-6 flex w-[380px] flex-col gap-4 text-white">
+          <div className="mt-6 flex w-[380px] flex-col gap-4 text-white xl:text-xs xxl:text-base">
             {currentMenu?.content.map((item) => (
               <p>{item}</p>
             ))}

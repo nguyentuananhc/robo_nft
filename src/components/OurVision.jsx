@@ -44,19 +44,18 @@ function OurVision() {
         backgroundImage: `url(${bgVision}), linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)`,
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
-        height: 720,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
       <div className="flex gap-4 px-36 py-20">
-        <div className="w-[458px]">
-          <h2 className="text-[42px] font-bold">
+        <div className="xl:w-[300px] xxl:w-[458px]">
+          <h2 className="font-bold xl:text-[28px] xxl:text-[42px]">
             Our Vision is to Drive Innovation Through Robotics
           </h2>
         </div>
-        <div className="flex w-[700px] flex-col gap-4">
+        <div className="flex w-[700px] flex-col gap-4 xl:text-xs xxl:text-base">
           <p>
             RoboCo is a Japanese robotics and AI technology pioneer that is
             leading the charge to transform human-robot interaction.
@@ -84,7 +83,7 @@ function OurVision() {
           {LIST.map((item) => {
             return (
               <span
-                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold ${
+                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold xl:text-xs xxl:text-base ${
                   randomElements?.includes(item)
                     ? 'text-[#2455EA]'
                     : 'text-[#8FAECB]'
@@ -105,7 +104,7 @@ function OurVision() {
           {LIST.map((item) => {
             return (
               <span
-                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold ${
+                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold xl:text-xs xxl:text-base ${
                   randomElements?.includes(item)
                     ? 'text-[#2455EA]'
                     : 'text-[#8FAECB]'
@@ -126,7 +125,7 @@ function OurVision() {
           {LIST.map((item) => {
             return (
               <span
-                className={`ml-10 cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold ${
+                className={`ml-10  cursor-pointer rounded-[56px] bg-white px-4 py-2 font-semibold xl:text-xs xxl:text-base ${
                   randomElements?.includes(item)
                     ? 'text-[#2455EA]'
                     : 'text-[#8FAECB]'
@@ -138,10 +137,10 @@ function OurVision() {
           })}
         </Marquee>
       </div>
-      <div className="mt-[100px] flex w-full items-center justify-center">
+      <div className="mt-[100px] mb-[60px] flex w-full items-center justify-center">
         <a
           href="/explore-app"
-          className="rounded bg-[#2455EA] p-2 font-semibold text-white"
+          className="rounded bg-[#2455EA] p-2 font-semibold text-white xl:text-xs"
           onClick={() => {}}
         >
           Learn More

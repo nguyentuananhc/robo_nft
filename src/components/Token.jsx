@@ -51,12 +51,11 @@ function Token() {
         display: 'flex',
         flexDirection: 'column',
         background: 'linear-gradient(180deg, #B3CADD 0%, #FFFFFF 100%)',
-        height: 720,
       }}
     >
       <div className="flex items-center justify-end pt-20">
         <img
-          className="mr-40 h-[458px] w-[458px]"
+          className="mr-40 xl:h-[300px] xl:w-[300px] xxl:h-[458px] xxl:w-[458px]"
           style={{
             transition: 'opacity 0.3s ease',
           }}
@@ -72,8 +71,10 @@ function Token() {
           }}
         >
           <div className="w-[380px] max-lg:w-[700px]">
-            <h2 className="w-[263px] text-[42px] font-bold">Tokenomics</h2>
-            <p className="mt-6 mb-10">
+            <h2 className="w-[263px] font-bold xl:text-[28px] xxl:text-[42px]">
+              Tokenomics
+            </h2>
+            <p className="mt-6 mb-10 xl:text-xs xxl:text-base">
               We foster a decentralized ecosystem where tokens drive ownership,
               participation, and rewards for shareholders
             </p>
@@ -91,8 +92,8 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(40)}
               >
-                <p className="font-semibold">Community Rewards</p>
-                <p className="text-2xl font-bold">40%</p>
+                <p className="xl:test-sm font-semibold">Community Rewards</p>
+                <p className="text-2xl font-bold xl:text-base">40%</p>
               </div>
               <div
                 style={{ borderLeft: '6px solid #1F37AE' }}
@@ -101,8 +102,8 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(10)}
               >
-                <p className="font-semibold">Team</p>
-                <p className="text-2xl font-bold">10%</p>
+                <p className="xl:test-sm font-semibold">Team</p>
+                <p className="text-2xl font-bold xl:text-base">10%</p>
               </div>
             </div>
             <div className="flex">
@@ -113,8 +114,8 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(20)}
               >
-                <p className="font-semibold">Ecosystem Fund</p>
-                <p className="text-2xl font-bold">20%</p>
+                <p className="xl:test-sm font-semibold">Ecosystem Fund</p>
+                <p className="text-2xl font-bold xl:text-base">20%</p>
               </div>
               <div
                 style={{ borderLeft: '6px solid #1E338A' }}
@@ -123,8 +124,8 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(7)}
               >
-                <p className="font-semibold">Advisor</p>
-                <p className="text-2xl font-bold">7%</p>
+                <p className="xl:test-sm font-semibold">Advisor</p>
+                <p className="text-2xl font-bold xl:text-base">7%</p>
               </div>
             </div>
             <div className="flex">
@@ -135,8 +136,10 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(18)}
               >
-                <p className="font-semibold">Marketing & Partnership</p>
-                <p className="text-2xl font-bold">18%</p>
+                <p className="xl:test-sm font-semibold">
+                  Marketing & Partnership
+                </p>
+                <p className="text-2xl font-bold xl:text-base">18%</p>
               </div>
               <div
                 style={{ borderLeft: '6px solid #172154' }}
@@ -145,13 +148,13 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(5)}
               >
-                <p className="font-semibold">Liquidity & MM</p>
-                <p className="text-2xl font-bold">5%</p>
+                <p className="xl:test-sm font-semibold">Liquidity & MM</p>
+                <p className="text-2xl font-bold xl:text-base">5%</p>
               </div>
             </div>
           </div>
           <div
-            className="mt-16 rounded-lg p-4 text-2xl font-bold text-white"
+            className="mt-16 rounded-lg p-4 text-2xl font-bold text-white xl:text-base"
             style={{
               background:
                 'linear-gradient(90deg, #2455EA 0%, rgba(36, 85, 234, 0) 100%)',

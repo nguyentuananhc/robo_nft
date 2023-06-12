@@ -32,14 +32,14 @@ const Welcome = () => {
         <div className="relative z-10 flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between">
           {/* <WelcomeHeros /> */}
 
-          <div className="mb-[37px] max-w-[696px] xl:mt-[160px] xl:mb-0 xl:w-[696px]">
+          <div className="mb-[37px] max-w-[696px] xl:mt-[160px] xl:mb-0 xl:w-[460px]">
             <div className="mb-6 flex flex-col gap-6 xl:mb-[24px]">
-              <h1 className="text-[42px] font-bold leading-heading text-white xl:text-[42px]">
+              <h1 className="text-[42px] font-bold leading-heading text-white xl:text-[27px]">
                 Revolutionizing the World with{' '}
                 <b className="text-[#78CEFF]">Robotics</b> and{' '}
                 <b className="text-[#78CEFF]">AI Technology</b>
               </h1>
-              <p className="leading-[1.61] text-white xl:text-[18px] xl:leading-[1.5]">
+              <p className="leading-[1.61] text-white xl:text-[16px] xl:leading-[1.5]">
                 Join RoboCo to leverage the power of AI and Blockchain to build
                 an innovative future today!
               </p>
@@ -47,34 +47,25 @@ const Welcome = () => {
             <div className="mb-[160px] flex">
               <a
                 href="/explore-app"
-                className="rounded bg-[#2455EA] p-2 font-semibold text-white"
+                className="rounded bg-[#2455EA] p-2 font-semibold text-white xl:text-xs xxl:text-base"
                 onClick={() => {}}
               >
                 Explore App
               </a>
             </div>
-            {/* 
-            <div className="flex gap-4">
-              <Button>ENTER APP</Button>
-              <SocialLink href="/" className="bg-socialLight">
-                <img src={telegram} alt="" />
-              </SocialLink>
-              <SocialLink href="/" className="bg-socialLight">
-                <img src={twitter} alt="" />
-              </SocialLink>
-              <SocialLink href="/" className="bg-socialLight">
-                <img src={discord} alt="" />
-              </SocialLink>
-            </div> */}
           </div>
         </div>
       </Container>
       <img
-        className="absolute bottom-[-1px] left-0"
+        className="absolute bottom-[-1px] left-0 xl:h-[66px] xl:w-[660px]"
         src={rectangle}
         alt="rectangle"
       />
-      <img className="absolute bottom-0 right-[-30px]" src={robo} alt="robo" />
+      <img
+        className="absolute bottom-0 right-[-30px] xl:h-[640px]"
+        src={robo}
+        alt="robo"
+      />
     </section>
   )
 }
