@@ -34,7 +34,7 @@ const Welcome = () => {
 
           <div className="mb-[37px] max-w-[696px] xl:mt-[160px] xl:mb-0 xl:w-[460px]">
             <div className="mb-6 flex flex-col gap-6 xl:mb-[24px]">
-              <h1 className="text-[42px] font-bold leading-heading text-white xl:text-[27px]">
+              <h1 className="font-bold leading-heading text-white xl:text-[27px] xxl:text-[42px]">
                 Revolutionizing the World with{' '}
                 <b className="text-[#78CEFF]">Robotics</b> and{' '}
                 <b className="text-[#78CEFF]">AI Technology</b>

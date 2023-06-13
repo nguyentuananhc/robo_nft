@@ -97,7 +97,7 @@ function RoboList() {
                   writingMode: 'vertical-lr',
                   textOrientation: 'sideways-right',
                 }}
-                className="absolute bottom-0  mb-16 whitespace-nowrap text-[42px] font-bold text-[#4A5C83]"
+                className="absolute bottom-0  mb-16 whitespace-nowrap font-bold text-[#4A5C83] xxl:text-[42px]"
               >
                 {item?.name}
               </h3>
