@@ -18,6 +18,17 @@ import groupimgbg6 from '@assets/robo/groupimgbg6.png'
 import groupimgbg7 from '@assets/robo/groupimgbg7.png'
 import groupimgbg8 from '@assets/robo/groupimgbg8.png'
 
+import groupmobile1 from '@assets/robo/groupmobile1.png'
+import groupmobile2 from '@assets/robo/groupmobile2.png'
+import groupmobile3 from '@assets/robo/groupmobile3.png'
+import groupmobile4 from '@assets/robo/groupmobile4.png'
+import groupmobile5 from '@assets/robo/groupmobile5.png'
+import groupmobile6 from '@assets/robo/groupmobile6.png'
+import groupmobile7 from '@assets/robo/groupmobile7.png'
+import groupmobile8 from '@assets/robo/groupmobile8.png'
+
+import { LeftArrow, RightArrow } from '@components/icons'
+
 const MENU = [
   {
     name: 'Introducing',
@@ -36,6 +47,7 @@ const MENU = [
     ],
     image: introducing,
     robots: null,
+    imageMobile: introducing,
   },
   {
     name: 'Home Assist',
@@ -45,6 +57,7 @@ const MENU = [
     ],
     image: groupimgbg1,
     robots: grouprobot1,
+    imageMobile: groupmobile1,
   },
   {
     name: 'Education',
@@ -54,6 +67,7 @@ const MENU = [
     ],
     image: groupimgbg2,
     robots: grouprobot2,
+    imageMobile: groupmobile2,
   },
   {
     name: 'Logistics',
@@ -63,6 +77,7 @@ const MENU = [
     ],
     image: groupimgbg3,
     robots: grouprobot3,
+    imageMobile: groupmobile3,
   },
   {
     name: 'Warehouse',
@@ -72,6 +87,7 @@ const MENU = [
     ],
     image: groupimgbg4,
     robots: grouprobot4,
+    imageMobile: groupmobile4,
   },
   {
     name: 'Manufacturing',
@@ -81,6 +97,7 @@ const MENU = [
     ],
     image: groupimgbg5,
     robots: grouprobot5,
+    imageMobile: groupmobile5,
   },
   {
     name: 'Healthcare',
@@ -90,6 +107,7 @@ const MENU = [
     ],
     image: groupimgbg6,
     robots: grouprobot6,
+    imageMobile: groupmobile6,
   },
   {
     name: 'Scientific Research',
@@ -99,6 +117,7 @@ const MENU = [
     ],
     image: groupimgbg7,
     robots: grouprobot7,
+    imageMobile: groupmobile7,
   },
   {
     name: 'Construction',
@@ -108,6 +127,7 @@ const MENU = [
     ],
     image: groupimgbg8,
     robots: grouprobot8,
+    imageMobile: groupmobile8,
   },
 ]
 
@@ -134,13 +154,69 @@ function OurRevolutionary() {
         flexDirection: 'column',
       }}
     >
-      <div className="flex gap-4 px-36 pt-14">
-        <h2 className="font-bold text-white xl:text-[28px] xxl:text-[42px]">
+      <div className="flex gap-4 py-9 px-4 sm:px-36 sm:pt-14">
+        <h2 className="text-2xl font-bold text-white xl:text-[28px] xxl:text-[42px]">
           Our Revolutionary Robots
         </h2>
       </div>
       <div
-        className="flex h-[70px] justify-between px-36 "
+        className="flex w-full items-center justify-between px-4 xl:hidden"
+        style={{ borderBottom: '2px solid #4A5C83' }}
+      >
+        <LeftArrow style={{ minWidth: 24 }} />
+        {menu.slice(0, 4).map((item) => (
+          <>
+            <div
+              onClick={() => selectMenu(item.name)}
+              style={{
+                borderBottom: `${
+                  item.status === 'active' ? '2px solid white' : 'unset'
+                }`,
+              }}
+              className={`flex h-[70px] cursor-pointer items-center justify-center whitespace-nowrap text-xs font-bold xl:text-xs xxl:text-base text-${
+                item.status === 'active' ? 'white' : '[#4A5C83]'
+              }`}
+            >
+              <span>{item.name}</span>
+            </div>
+          </>
+        ))}
+        <RightArrow style={{ minWidth: 24 }} />
+      </div>
+      <div className="flex flex-col justify-between gap-10 xl:hidden xl:flex-row">
+        <div className="flex flex-col p-4">
+          <h2 className="font-bold capitalize text-white xl:text-[28px] xxl:w-[194px] xxl:text-[42px]">
+            {currentMenu?.name || ''}
+          </h2>
+          <div className="mt-6 flex w-[380px] flex-col gap-4 text-white xl:text-xs xxl:text-base">
+            {currentMenu?.content.map((item) => (
+              <p>{item}</p>
+            ))}
+          </div>
+          {currentMenu?.robots && (
+            <div
+              className="my-6 h-1"
+              style={{
+                background:
+                  'linear-gradient(90deg, #78CEFF 0%, rgba(120, 206, 255, 0) 100%)',
+              }}
+            ></div>
+          )}
+          {currentMenu?.robots && (
+            <img className="h-32 w-fit" src={currentMenu?.robots} alt="" />
+          )}
+        </div>
+        <div>
+          <img
+            className="mt-[-130px] w-full"
+            src={currentMenu?.imageMobile}
+            alt=""
+          />
+        </div>
+      </div>
+
+      <div
+        className="hidden h-[70px] justify-between gap-1 px-36 xl:flex"
         style={{ borderBottom: '2px solid #4A5C83' }}
       >
         {menu.map((item) => (
@@ -152,7 +228,7 @@ function OurRevolutionary() {
                   item.status === 'active' ? 'white' : '#4A5C83'
                 } `,
               }}
-              className={`flex h-[70px] cursor-pointer items-center justify-center font-bold xl:text-xs xxl:text-base text-${
+              className={`flex h-[70px] cursor-pointer items-center justify-center whitespace-nowrap font-bold xl:text-xs xxl:text-base text-${
                 item.status === 'active' ? 'white' : '[#4A5C83]'
               }`}
             >
@@ -161,7 +237,7 @@ function OurRevolutionary() {
           </>
         ))}
       </div>
-      <div className="flex justify-between gap-10">
+      <div className="mx-auto hidden flex-col justify-between gap-10 sm:flex-row xl:flex">
         <div className="flex flex-col py-14 pl-36">
           <h2 className="font-bold capitalize text-white xl:text-[28px] xxl:w-[194px] xxl:text-[42px]">
             {currentMenu?.name || ''}

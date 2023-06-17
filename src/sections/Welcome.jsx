@@ -2,17 +2,9 @@ import React from 'react'
 import Container from '@components/Container'
 import Navbar from '@components/Navbar'
 
-import cloud from '@assets/images/header-cloud.svg'
-import WelcomeHeros from '../components/WelcomeHeros'
-import SocialLink from '../components/SocialLink'
-
-import twitter from '@assets/images/twitter.svg'
-import telegram from '@assets/images/telegram.svg'
-import discord from '@assets/images/discord.svg'
 import rectangle from '@assets/robo/rect.png'
+import robotmobile from '@assets/robo/robotmobile.png'
 import robo from '@assets/robo/robo.png'
-
-import Button from '../components/Button'
 
 const Welcome = () => {
   return (
@@ -32,22 +24,22 @@ const Welcome = () => {
         <div className="relative z-10 flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between">
           {/* <WelcomeHeros /> */}
 
-          <div className="mb-[37px] max-w-[696px] xl:mt-[160px] xl:mb-0 xl:w-[460px]">
+          <div className="mt-20 mb-[37px] max-w-[696px] sm:w-[460px] xl:mt-[160px] xl:mb-0 xxl:w-[696px]">
             <div className="mb-6 flex flex-col gap-6 xl:mb-[24px]">
-              <h1 className="font-bold leading-heading text-white xl:text-[27px] xxl:text-[42px]">
+              <h1 className="text-2xl font-bold leading-heading text-white xl:text-[27px] xxl:text-[42px]">
                 Revolutionizing the World with{' '}
                 <b className="text-[#78CEFF]">Robotics</b> and{' '}
                 <b className="text-[#78CEFF]">AI Technology</b>
               </h1>
-              <p className="leading-[1.61] text-white xl:text-[16px] xl:leading-[1.5]">
+              <p className="leading-5 text-white md:text-sm xl:text-[16px] xl:leading-8 xxl:text-[24px]">
                 Join RoboCo to leverage the power of AI and Blockchain to build
                 an innovative future today!
               </p>
             </div>
-            <div className="mb-[160px] flex">
+            <div className="flex sm:mb-[160px]">
               <a
                 href="/explore-app"
-                className="rounded bg-[#2455EA] p-2 font-semibold text-white xl:text-xs xxl:text-base"
+                className="rounded bg-[#2455EA] p-2 text-sm font-semibold text-white xl:text-xs xxl:text-base"
                 onClick={() => {}}
               >
                 Explore App
@@ -56,13 +48,16 @@ const Welcome = () => {
           </div>
         </div>
       </Container>
+      <div className="flex flex-1 items-center justify-center sm:hidden">
+        <img src={robotmobile} />
+      </div>
       <img
-        className="absolute bottom-[-1px] left-0 xl:h-[66px] xl:w-[660px]"
+        className="absolute bottom-0 left-0 h-[46px] w-[100%] sm:w-[50%] xl:h-[66px] xl:w-[660px]"
         src={rectangle}
         alt="rectangle"
       />
       <img
-        className="absolute bottom-0 right-[-30px] xl:h-[640px]"
+        className="absolute bottom-0 right-[-30px] hidden sm:block sm:h-[320px] xl:block xl:h-[640px] xxl:block"
         src={robo}
         alt="robo"
       />

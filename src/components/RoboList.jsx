@@ -32,79 +32,164 @@ function RoboList() {
     setList(newList)
   }
 
+  const selected = list.find((item) => item.status === 'active')
+
   return (
     <section
       style={{
         display: 'flex',
         alignItems: 'center',
-        height: 720,
+        flexDirection: 'column',
       }}
     >
-      {list.map((item, index) => {
-        if (item.status === 'active') {
+      <div className="hidden w-full items-center sm:flex">
+        {list.map((item, index) => {
+          if (item.status === 'active') {
+            return (
+              <div className="flex w-[420px] cursor-pointer flex-col items-center xl:w-[600px]">
+                <div
+                  className="relative text-center"
+                  style={{
+                    background:
+                      'linear-gradient(180deg, #0C112C 0%, #2455EA 100%)',
+                  }}
+                >
+                  <img
+                    src={item?.img}
+                    style={{
+                      transition: 'opacity 0.3s ease',
+                    }}
+                  />
+                  <div
+                    style={{
+                      background:
+                        'linear-gradient(180deg, rgba(12, 17, 44, 0) 0%, #0C112C 69.79%)',
+                    }}
+                    className="absolute bottom-0 left-0 flex h-[70px] w-full items-center justify-center py-16 text-white"
+                  >
+                    <h3 className="text-[42px] font-bold text-white">
+                      {item?.name}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            )
+          }
           return (
-            <div className="flex cursor-pointer flex-col items-center">
+            <div
+              onClick={() => {
+                handleActive(index)
+              }}
+              className="flex flex-1 cursor-pointer flex-col items-center"
+            >
               <div
-                className="relative text-center"
+                className="relative flex  h-[504px] justify-center xl:h-[720px]"
                 style={{
-                  width: 600,
-                  background:
-                    'linear-gradient(180deg, #0C112C 0%, #2455EA 100%)',
+                  width: '100%',
+                  backgroundImage: `url(${item?.img}), linear-gradient(180deg, #0C112C 0%, #2455EA 100%)`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  transition: 'opacity 0.3s ease',
+                  backgroundSize: 'cover',
                 }}
               >
-                <img
-                  src={item?.img}
+                <div className="absolute h-full w-full backdrop-blur"></div>
+                <h3
                   style={{
-                    transition: 'opacity 0.3s ease',
+                    writingMode: 'vertical-lr',
+                    textOrientation: 'sideways-right',
                   }}
-                />
+                  className="absolute bottom-0  mb-16 whitespace-nowrap font-bold text-[#4A5C83] xxl:text-[42px]"
+                >
+                  {item?.name}
+                </h3>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      <div className="flex w-full items-center md:hidden">
+        {list.map((item, index) => {
+          if (item.status === 'active') {
+            return (
+              <div className="flex cursor-pointer flex-col items-center">
                 <div
+                  className="relative text-center"
+                  style={{
+                    background:
+                      'linear-gradient(180deg, #0C112C 0%, #2455EA 100%)',
+                  }}
+                >
+                  <img
+                    src={item?.img}
+                    style={{
+                      transition: 'opacity 0.3s ease',
+                      height: 120,
+                      width: 'auto',
+                    }}
+                  />
+                </div>
+              </div>
+            )
+          }
+          return (
+            <div
+              onClick={() => {
+                handleActive(index)
+              }}
+              className="flex flex-1 cursor-pointer flex-col items-center"
+            >
+              <div
+                className="relative flex h-[120px] justify-center"
+                style={{
+                  width: '100%',
+                  backgroundImage: `url(${item?.img}), linear-gradient(180deg, #0C112C 0%, #2455EA 100%)`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center',
+                  transition: 'opacity 0.3s ease',
+                  backgroundSize: 'cover',
+                }}
+              >
+                <div
+                  className="absolute h-full w-full"
                   style={{
                     background:
                       'linear-gradient(180deg, rgba(12, 17, 44, 0) 0%, #0C112C 69.79%)',
                   }}
-                  className="absolute bottom-0 left-0 flex h-[70px] w-full items-center justify-center py-16 text-white"
-                >
-                  <h3 className="text-[42px] font-bold text-white">
-                    {item?.name}
-                  </h3>
-                </div>
+                ></div>
               </div>
             </div>
           )
-        }
-        return (
+        })}
+      </div>
+      <div className="sm:hidden">
+        <div className="flex cursor-pointer flex-col items-center">
           <div
-            onClick={() => {
-              handleActive(index)
+            className="relative text-center"
+            style={{
+              background: 'linear-gradient(180deg, #0C112C 0%, #2455EA 100%)',
             }}
-            className="flex flex-1 cursor-pointer flex-col items-center"
           >
-            <div
-              className="relative flex justify-center"
+            <img
+              src={selected?.img}
               style={{
-                width: '100%',
-                height: 720,
-                backgroundImage: `url(${item?.img}), linear-gradient(180deg, #0C112C 0%, #2455EA 100%)`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
                 transition: 'opacity 0.3s ease',
               }}
+            />
+            <div
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(12, 17, 44, 0) 0%, #0C112C 69.79%)',
+              }}
+              className="absolute bottom-0 left-0 flex h-[70px] w-full items-center justify-center py-16 text-white"
             >
-              <div className="absolute h-full w-full backdrop-blur"></div>
-              <h3
-                style={{
-                  writingMode: 'vertical-lr',
-                  textOrientation: 'sideways-right',
-                }}
-                className="absolute bottom-0  mb-16 whitespace-nowrap font-bold text-[#4A5C83] xxl:text-[42px]"
-              >
-                {item?.name}
+              <h3 className="text-[24px] font-bold text-white">
+                {selected?.name}
               </h3>
             </div>
           </div>
-        )
-      })}
+        </div>
+      </div>
     </section>
   )
 }

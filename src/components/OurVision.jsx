@@ -44,18 +44,19 @@ function OurVision() {
         backgroundImage: `url(${bgVision}), linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)`,
         backgroundPosition: 'bottom',
         backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
       }}
     >
-      <div className="flex gap-4 px-36 py-20">
+      <div className="mx-auto flex w-full flex-col gap-4  py-9 px-4 sm:flex-row sm:px-36 sm:py-20">
         <div className="xl:w-[300px] xxl:w-[458px]">
-          <h2 className="font-bold xl:text-[28px] xxl:text-[42px]">
+          <h2 className="text-2xl font-bold xl:text-[28px] xxl:text-[42px]">
             Our Vision is to Drive Innovation Through Robotics
           </h2>
         </div>
-        <div className="flex w-[700px] flex-col gap-4 xl:text-xs xxl:text-base">
+        <div className="flex flex-col gap-4 xl:w-[700px] xl:text-xs xxl:text-base">
           <p>
             RoboCo is a Japanese robotics and AI technology pioneer that is
             leading the charge to transform human-robot interaction.
