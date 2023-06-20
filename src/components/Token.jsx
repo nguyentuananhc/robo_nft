@@ -51,7 +51,7 @@ function Token() {
         background: 'linear-gradient(180deg, #B3CADD 0%, #FFFFFF 100%)',
       }}
     >
-      <div className="flex flex-col items-center justify-center pt-20 xl:flex-row xl:justify-end">
+      <div className="mx-auto flex flex-col items-center justify-center pt-20 xl:flex-row xl:justify-end xxl:w-[1300px]">
         <img
           className="h-[240px] w-[240px] xl:mr-40 xl:h-[300px] xl:w-[300px] xxl:h-[458px] xxl:w-[458px]"
           style={{

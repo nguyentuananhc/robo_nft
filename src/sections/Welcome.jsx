@@ -21,9 +21,7 @@ const Welcome = () => {
     >
       <Container className="relative">
         <Navbar />
-        <div className="relative z-10 flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between">
-          {/* <WelcomeHeros /> */}
-
+        <div className="relative z-10 mx-auto flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between xxl:w-[1300px]">
           <div className="mt-20 mb-[37px] max-w-[696px] sm:w-[460px] xl:mt-[160px] xl:mb-0 xxl:w-[696px]">
             <div className="mb-6 flex flex-col gap-6 xl:mb-[24px]">
               <h1 className="text-2xl font-bold leading-heading text-white xl:text-[27px] xxl:text-[42px]">

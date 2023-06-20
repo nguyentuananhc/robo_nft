@@ -155,7 +155,7 @@ function OurRevolutionary() {
       }}
     >
       <div className="flex gap-4 py-9 px-4 sm:px-36 sm:pt-14">
-        <h2 className="text-2xl font-bold text-white xl:text-[28px] xxl:text-[42px]">
+        <h2 className="text-2xl font-bold leading-heading text-white xl:text-[28px] xxl:text-[42px]">
           Our Revolutionary Robots
         </h2>
       </div>
@@ -208,7 +208,11 @@ function OurRevolutionary() {
         </div>
         <div>
           <img
-            className="mt-[-130px] w-full"
+            className={`${
+              currentMenu?.name === 'Introducing'
+                ? 'w-full'
+                : 'mt-[-130px] w-full'
+            }`}
             src={currentMenu?.imageMobile}
             alt=""
           />

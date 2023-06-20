@@ -14,10 +14,9 @@ function SliderSection() {
       }}
     >
       <div className="mx-auto flex w-full flex-col items-center py-9 px-4 text-center sm:px-36 sm:pt-14">
-        <h2 className="text-2xl font-bold text-white xl:text-[28px] xxl:text-[42px]">
+        <h2 className="text-2xl font-bold leading-heading text-white xl:text-[28px] xxl:text-[42px]">
           Get your virtual ownership and earn profits
-        </h2>
-        <h2 className="text-2xl font-bold text-white xl:text-[28px] xxl:text-[42px]">
+          <br />
           from Our RoboCo NFT Collection
         </h2>
         <img className="mt-20 w-[457px]" src={slider} />

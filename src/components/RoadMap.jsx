@@ -12,7 +12,7 @@ function RoadMap() {
       }}
     >
       <div className="flex gap-4 py-9 px-4 sm:px-36 sm:py-14">
-        <h2 className="text-2xl font-bold leading-7 xl:w-[460px] xl:text-[28px] xxl:w-[696px] xxl:text-[42px]">
+        <h2 className="text-2xl font-bold leading-heading xl:w-[460px] xl:text-[28px] xxl:w-[696px] xxl:text-[42px]">
           Get ready for an inspiring journey with Our Roadmap
         </h2>
       </div>
@@ -26,12 +26,12 @@ function RoadMap() {
         ></div>
         <div className="w-[60%] bg-[#D2DFEB;]"></div>
         <img
-          className="absolute left-[36%] top-[-20px]"
+          className="absolute left-[38%] top-[-20px]"
           src={robotRoadMap}
           alt="robot"
         />
       </div>
-      <div className="mb-8 flex flex-col gap-10 px-4 py-9 xl:flex-row xl:px-36 xl:pt-14">
+      <div className="mx-auto mb-8 flex flex-col gap-10 px-4 py-9 xl:flex-row xl:px-36 xl:pt-14 xxl:w-[1330px]">
         <div className="text-right xl:w-[360px] xl:text-left">
           <p className="font-bold text-[#2455EA] xl:text-xs xxl:text-base">
             H1-2024

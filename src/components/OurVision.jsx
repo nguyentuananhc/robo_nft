@@ -50,9 +50,9 @@ function OurVision() {
         alignItems: 'center',
       }}
     >
-      <div className="mx-auto flex w-full flex-col gap-4  py-9 px-4 sm:flex-row sm:px-36 sm:py-20">
+      <div className="mx-auto flex w-full flex-col gap-4  py-9 px-4 sm:flex-row sm:px-36 sm:py-20 xxl:w-[1300px]">
         <div className="xl:w-[300px] xxl:w-[458px]">
-          <h2 className="text-2xl font-bold xl:text-[28px] xxl:text-[42px]">
+          <h2 className="text-2xl font-bold leading-heading xl:text-[28px] xxl:text-[42px]">
             Our Vision is to Drive Innovation Through Robotics
           </h2>
         </div>
