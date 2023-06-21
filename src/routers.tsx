@@ -8,6 +8,9 @@ import Swap from "./pages/Swap";
 import Market from "./pages/Market";
 import Portfolio from "./pages/Portfolio";
 import LandingPage from "./pages/LandingPage";
+import Investor from "./pages/Investor";
+import BuyNFT from "./pages/BuyNFT";
+import Airdrop from "./pages/Airdrop";
 
 const routerList: Array<RouteObject> =  [
 	{
@@ -37,6 +40,18 @@ const routerList: Array<RouteObject> =  [
 			{
 				path: `${PARENT_URL.dapp}/portfolio`,
 				element: <Portfolio />
+			},
+			{
+				path: `${PARENT_URL.dapp}/investor`,
+				element: <Investor />
+			},
+			{
+				path: `${PARENT_URL.dapp}/buy-nft`,
+				element: <BuyNFT />
+			},
+			{
+				path: `${PARENT_URL.dapp}/airdrop`,
+				element: <Airdrop />
 			}
 		],
 	},

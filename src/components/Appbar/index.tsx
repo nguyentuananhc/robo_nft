@@ -5,12 +5,25 @@ import IconButton from '@mui/material/IconButton'
 import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+
+const title = {
+  '/dapp/airdrop': "Airdrop  >  Pools",
+  '/dapp/tool/working': 'Tools > Working',
+  '/dapp/swap': 'Swap',
+  '/dapp/market': 'Market',
+  '/dapp/portfolio': 'Robo Portfolio',
+  '/dapp/investor': 'Investor Profile',
+}
 
 const Appbar = ({
   styleContainer,
 }: {
   styleContainer?: React.CSSProperties
 }) => {
+
+  const location = useLocation()
+
   return (
     <Box sx={{ flexGrow: 0, height: 66 }}>
       <AppBar
@@ -47,7 +60,9 @@ const Appbar = ({
               component="div"
               sx={{ flexGrow: 1 }}
             >
-              Airdrop
+              {
+                title[location?.pathname]
+              }
             </Typography>
             <Button style={{ backgroundColor: '#3C76F5', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 8, paddingBottom: 8 }}>
               <Typography
