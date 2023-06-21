@@ -53,8 +53,9 @@ export interface CardItemInterface {
 
 export enum TYPE {
   WORK = 'WORK',
-  WORKING = 'WORKING'
-
+  WORKING = 'WORKING',
+  SALE = 'Sale',
+  ALL = 'All',
 }
 
 const ToolWorking = () => {
