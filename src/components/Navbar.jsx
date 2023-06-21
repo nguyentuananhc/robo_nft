@@ -111,12 +111,12 @@ const Navbar = ({ onLinkClick }) => {
               Docs
             </a>
             <a
-              href="/explore-app"
+              href="/dapp/buy-nft"
               className="rounded bg-[#2455EA] p-2 font-semibold text-white xl:text-xs xxl:text-base"
-              onClick={() => {
-                setOpen(false)
-                onLinkClick && onLinkClick()
-              }}
+              // onClick={() => {
+              //   setOpen(false)
+              //   onLinkClick && onLinkClick()
+              // }}
             >
               Explore App
             </a>
