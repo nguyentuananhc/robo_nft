@@ -29,6 +29,10 @@ import groupmobile8 from '@assets/robo/groupmobile8.png'
 
 import { LeftArrow, RightArrow } from '@components/icons'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+
+import 'swiper/css'
+
 const MENU = [
   {
     name: 'Introducing',
@@ -133,6 +137,7 @@ const MENU = [
 
 function OurRevolutionary() {
   const [menu, setMenu] = React.useState(MENU)
+  const [swiperRef, setSwiperRef] = React.useState({})
 
   const currentMenu = menu.find((item) => item.status === 'active')
 
@@ -160,35 +165,91 @@ function OurRevolutionary() {
         </h2>
       </div>
       <div
-        className="flex w-full items-center justify-between px-4 xl:hidden"
+        className="relative flex items-center px-8 xl:hidden"
         style={{ borderBottom: '2px solid #4A5C83' }}
       >
-        <LeftArrow style={{ minWidth: 24 }} />
-        {menu.slice(0, 4).map((item) => (
-          <>
-            <div
-              onClick={() => selectMenu(item.name)}
-              style={{
-                borderBottom: `${
-                  item.status === 'active' ? '2px solid white' : 'unset'
-                }`,
-              }}
-              className={`flex h-[70px] cursor-pointer items-center justify-center whitespace-nowrap text-xs font-bold xl:text-xs xxl:text-base text-${
-                item.status === 'active' ? 'white' : '[#4A5C83]'
-              }`}
-            >
-              <span>{item.name}</span>
+        <div
+          className="absolute left-0 top-[30%]"
+          onClick={() => swiperRef.slidePrev()}
+        >
+          <LeftArrow style={{ minWidth: 24 }} />
+        </div>
+        <div
+          className="absolute right-0 top-[30%]"
+          onClick={() => swiperRef.slideNext()}
+        >
+          <RightArrow style={{ minWidth: 24 }} />
+        </div>
+
+        <Swiper onSwiper={setSwiperRef} spaceBetween={50} slidesPerView={1}>
+          <SwiperSlide>
+            <div className="flex w-full items-center justify-between">
+              {menu.slice(0, 4).map((item) => (
+                <div
+                  key={`${item.name}-2`}
+                  onClick={() => selectMenu(item.name)}
+                  style={{
+                    borderBottom: `${
+                      item.status === 'active' ? '2px solid white' : 'unset'
+                    }`,
+                  }}
+                  className={`flex h-[70px] cursor-pointer items-center justify-center whitespace-nowrap text-xs font-bold xl:text-xs xxl:text-base text-${
+                    item.status === 'active' ? 'white' : '[#4A5C83]'
+                  }`}
+                >
+                  <span>{item.name}</span>
+                </div>
+              ))}
             </div>
-          </>
-        ))}
-        <RightArrow style={{ minWidth: 24 }} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex w-full items-center justify-between">
+              {menu.slice(4, 8).map((item) => (
+                <div
+                  key={`${item.name}-3`}
+                  onClick={() => selectMenu(item.name)}
+                  style={{
+                    borderBottom: `${
+                      item.status === 'active' ? '2px solid white' : 'unset'
+                    }`,
+                  }}
+                  className={`flex h-[70px] cursor-pointer items-center justify-center whitespace-nowrap text-xs font-bold xl:text-xs xxl:text-base text-${
+                    item.status === 'active' ? 'white' : '[#4A5C83]'
+                  }`}
+                >
+                  <span>{item.name}</span>
+                </div>
+              ))}
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="flex w-full items-center justify-between">
+              {menu.slice(8, 9).map((item) => (
+                <div
+                  key={`${item.name}-1`}
+                  onClick={() => selectMenu(item.name)}
+                  style={{
+                    borderBottom: `${
+                      item.status === 'active' ? '2px solid white' : 'unset'
+                    }`,
+                  }}
+                  className={`flex h-[70px] cursor-pointer items-center justify-center whitespace-nowrap text-xs font-bold xl:text-xs xxl:text-base text-${
+                    item.status === 'active' ? 'white' : '[#4A5C83]'
+                  }`}
+                >
+                  <span>{item.name}</span>
+                </div>
+              ))}
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
       <div className="flex flex-col justify-between gap-10 xl:hidden xl:flex-row">
         <div className="flex flex-col p-4">
           <h2 className="font-bold capitalize text-white xl:text-[28px] xxl:w-[194px] xxl:text-[42px]">
             {currentMenu?.name || ''}
           </h2>
-          <div className="mt-6 flex w-[380px] flex-col gap-4 text-white xl:text-xs xxl:text-base">
+          <div className="mt-6 flex w-[380px] flex-col gap-4 text-xs text-white xl:text-xs xxl:text-base">
             {currentMenu?.content.map((item) => (
               <p>{item}</p>
             ))}
@@ -241,12 +302,12 @@ function OurRevolutionary() {
           </>
         ))}
       </div>
-      <div className="mx-auto hidden flex-col justify-between gap-10 sm:flex-row xl:flex">
-        <div className="flex flex-col py-14 pl-36">
+      <div className="hidden flex-col justify-between gap-10 sm:flex-row xl:flex 3xl:mx-auto 3xl:w-[1300px]">
+        <div className="flex flex-col py-14 pl-36 3xl:pl-0">
           <h2 className="font-bold capitalize text-white xl:text-[28px] xxl:w-[194px] xxl:text-[42px]">
             {currentMenu?.name || ''}
           </h2>
-          <div className="mt-6 flex w-[380px] flex-col gap-4 text-white xl:text-xs xxl:text-base">
+          <div className="mt-6 flex w-[380px] flex-col gap-4 text-xs text-white xl:text-xs xxl:text-base">
             {currentMenu?.content.map((item) => (
               <p>{item}</p>
             ))}

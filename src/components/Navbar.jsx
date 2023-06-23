@@ -13,6 +13,7 @@ import {
   FB,
   Youtube,
   BlueBird,
+  Logo,
 } from '@components/icons'
 
 const NAV = [
@@ -37,18 +38,17 @@ const Navbar = ({ onLinkClick }) => {
 
   return (
     <header className="relative pt-3 xl:pt-7">
-      <div className="flex w-full flex-wrap items-center justify-between gap-[20px] md:justify-between">
-        <a href="/">
-          <a
-            href="/explore-our-robots"
-            className="text-sm font-semibold text-white sm:text-sm xl:text-xs xxl:text-base"
-            onClick={() => {
-              setOpen(false)
-              onLinkClick && onLinkClick()
-            }}
-          >
-            roboco
-          </a>
+      <div className="z-10 flex w-full flex-wrap items-center justify-between gap-[20px] md:justify-between">
+        <a
+          href="/explore-our-robots"
+          className="flex gap-1 text-sm font-semibold text-white sm:text-sm xl:text-xs xxl:text-base"
+          onClick={() => {
+            setOpen(false)
+            onLinkClick && onLinkClick()
+          }}
+        >
+          <Logo />
+          roboco
         </a>
 
         <button
@@ -149,16 +149,15 @@ const Navbar = ({ onLinkClick }) => {
                 className="flex justify-between px-4 py-6"
                 style={{ borderBottom: '1px solid #2455EA' }}
               >
-                <a href="/">
-                  <a
-                    className="text-sm font-semibold text-white"
-                    onClick={() => {
-                      setOpen(false)
-                      onLinkClick && onLinkClick()
-                    }}
-                  >
-                    roboco
-                  </a>
+                <a
+                  className="flex gap-1 text-sm font-semibold text-white"
+                  onClick={() => {
+                    setOpen(false)
+                    onLinkClick && onLinkClick()
+                  }}
+                >
+                  <Logo />
+                  roboco
                 </a>
                 <button
                   className="flex h-[34px] w-[34px] items-center justify-center rounded-lg bg-primary"

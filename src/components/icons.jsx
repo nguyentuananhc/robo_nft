@@ -177,3 +177,89 @@ export const FB = () => (
     />
   </svg>
 )
+
+export const Logo = () => {
+  return (
+    <svg
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12.4701" r="12" fill="white" />
+      <ellipse
+        cx="12.0003"
+        cy="12.4701"
+        rx="8.51351"
+        ry="8.51351"
+        fill="#1E42D7"
+      />
+      <rect
+        x="5.71729"
+        y="7.28087"
+        width="12.6892"
+        height="10.3784"
+        rx="5.18919"
+        fill="white"
+      />
+      <rect
+        x="10.8647"
+        y="10.5644"
+        width="3.81081"
+        height="1.37838"
+        rx="0.689189"
+        transform="rotate(90 10.8647 10.5644)"
+        fill="#1E42D7"
+      />
+      <rect
+        x="14.6362"
+        y="10.5644"
+        width="3.81081"
+        height="1.37838"
+        rx="0.689189"
+        transform="rotate(90 14.6362 10.5644)"
+        fill="#1E42D7"
+      />
+    </svg>
+  )
+}
+
+export const BigLogo = () => (
+  <svg
+    width="37"
+    height="37"
+    viewBox="0 0 37 37"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="18.5" cy="18.5" r="18.5" fill="white" />
+    <ellipse cx="18.5" cy="18.5" rx="13.125" ry="13.125" fill="#1E42D7" />
+    <rect
+      x="8.81396"
+      y="10.5"
+      width="19.5625"
+      height="16"
+      rx="8"
+      fill="white"
+    />
+    <rect
+      x="16.75"
+      y="15.562"
+      width="5.875"
+      height="2.125"
+      rx="1.0625"
+      transform="rotate(90 16.75 15.562)"
+      fill="#1E42D7"
+    />
+    <rect
+      x="22.5645"
+      y="15.562"
+      width="5.875"
+      height="2.125"
+      rx="1.0625"
+      transform="rotate(90 22.5645 15.562)"
+      fill="#1E42D7"
+    />
+  </svg>
+)

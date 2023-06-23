@@ -51,9 +51,9 @@ function Token() {
         background: 'linear-gradient(180deg, #B3CADD 0%, #FFFFFF 100%)',
       }}
     >
-      <div className="mx-auto flex flex-col items-center justify-center pt-20 xl:flex-row xl:justify-end xxl:w-[1300px]">
+      <div className="flex flex-col items-center justify-center pt-20 xl:flex-row xl:px-10 3xl:mx-auto 3xl:w-[1300px]">
         <img
-          className="h-[240px] w-[240px] xl:mr-40 xl:h-[300px] xl:w-[300px] xxl:h-[458px] xxl:w-[458px]"
+          className="h-[240px] w-[240px] xl:h-[300px] xl:w-[300px] xxl:mr-40 xxl:h-[458px] xxl:w-[458px]"
           style={{
             transition: 'opacity 0.3s ease',
           }}
@@ -74,7 +74,7 @@ function Token() {
             <h2 className="text-2xl font-bold xl:w-[263px] xl:text-[28px] xxl:text-[42px]">
               Tokenomics
             </h2>
-            <p className="mt-6 mb-10 xl:text-xs xxl:text-base">
+            <p className="mt-6 mb-10 text-xs xl:text-xs xxl:text-base">
               We foster a decentralized ecosystem where tokens drive ownership,
               participation, and rewards for shareholders
             </p>
@@ -92,7 +92,7 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(40)}
               >
-                <p className="xl:test-xl whitespace-nowrap font-semibold">
+                <p className="xl:test-xl whitespace-nowrap text-sm font-semibold ">
                   Community Rewards
                 </p>
                 <p className="text-lg font-bold xl:text-base xxl:text-2xl">
@@ -106,7 +106,7 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(10)}
               >
-                <p className="xl:test-xl whitespace-nowrap font-semibold">
+                <p className="xl:test-xl whitespace-nowrap text-sm font-semibold ">
                   Team
                 </p>
                 <p className="text-lg font-bold xl:text-base xxl:text-2xl">
@@ -122,7 +122,7 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(20)}
               >
-                <p className="xl:test-xl whitespace-nowrap font-semibold">
+                <p className="xl:test-xl whitespace-nowrap text-sm font-semibold ">
                   Ecosystem Fund
                 </p>
                 <p className="text-lg font-bold xl:text-base xxl:text-2xl">
@@ -136,7 +136,7 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(7)}
               >
-                <p className="xl:test-xl whitespace-nowrap font-semibold">
+                <p className="xl:test-xl whitespace-nowrap text-sm font-semibold ">
                   Advisor
                 </p>
                 <p className="text-lg font-bold xl:text-base xxl:text-2xl">
@@ -152,7 +152,7 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(18)}
               >
-                <p className="xl:test-xl whitespace-nowrap font-semibold">
+                <p className="xl:test-xl whitespace-nowrap text-sm font-semibold ">
                   MKT & Partnership
                 </p>
                 <p className="text-lg font-bold xl:text-base xxl:text-2xl">
@@ -166,7 +166,7 @@ function Token() {
                 }`}
                 onMouseEnter={() => handleMouseEnter(5)}
               >
-                <p className="xl:test-xl whitespace-nowrap font-semibold">
+                <p className="xl:test-xl whitespace-nowrap text-sm font-semibold ">
                   Liquidity & MM
                 </p>
                 <p className="text-lg font-bold xl:text-base xxl:text-2xl">

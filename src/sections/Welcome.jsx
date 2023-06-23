@@ -21,7 +21,7 @@ const Welcome = () => {
     >
       <Container className="relative">
         <Navbar />
-        <div className="relative z-10 mx-auto flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between xxl:w-[1300px]">
+        <div className="relative z-10 flex flex-col items-start xl:mt-0 xl:flex-row xl:justify-between 3xl:mx-auto 3xl:w-[1300px]">
           <div className="mt-20 mb-[37px] max-w-[696px] sm:w-[460px] xl:mt-[160px] xl:mb-0 xxl:w-[696px]">
             <div className="mb-6 flex flex-col gap-6 xl:mb-[24px]">
               <h1 className="text-2xl font-bold leading-heading text-white xl:text-[27px] xxl:text-[42px]">
@@ -50,7 +50,7 @@ const Welcome = () => {
         <img src={robotmobile} />
       </div>
       <img
-        className="absolute bottom-0 left-0 h-[46px] w-[100%] sm:w-[50%] xl:h-[66px] xl:w-[660px]"
+        className="absolute bottom-0 left-0 h-[46px] w-[100%] sm:w-[50%] xl:h-[66px] xxl:w-[660px]"
         src={rectangle}
         alt="rectangle"
       />
