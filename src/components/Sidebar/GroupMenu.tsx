@@ -53,6 +53,7 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
               borderBottomRightRadius: '0px',
             }),
           }}
+          {...(item?.children ? {} : { component: 'a', href: item.url })}
         >
           <Box
             style={{
@@ -112,6 +113,7 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
                         : {}),
                     }),
                   }}
+                  {...(child?.children ? {} : { component: 'a', href: child.url })}
                 >
                   <Box
                     style={{

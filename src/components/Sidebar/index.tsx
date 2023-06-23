@@ -47,12 +47,12 @@ const listMenu: Array<MenuItem> = [
   {
     title: 'Buy',
     icon: buyIcon,
-    url: `#`,
+    url: `/dapp/buy-nft`,
   },
   {
     title: 'Airdrop',
     icon: airdrop,
-    url: `#`,
+    url: `/dapp/airdrop`,
   },
   {
     title: 'Tools',
@@ -61,6 +61,7 @@ const listMenu: Array<MenuItem> = [
       {
         title: 'Working',
         icon: buyIcon,
+        url: `/dapp/tool/working`,
       },
       {
         title: 'Bot-GPT',
@@ -71,7 +72,7 @@ const listMenu: Array<MenuItem> = [
   {
     title: 'Swap',
     icon: swapIcon,
-    url: `#`,
+    url: `/dapp/swap`,
   },
   {
     title: 'Farms',
@@ -81,17 +82,17 @@ const listMenu: Array<MenuItem> = [
   {
     title: 'Markets',
     icon: marketIcon,
-    url: `#`,
+    url: `/dapp/market`,
   },
   {
     title: 'Robo Portfolio',
     icon: roboIcon,
-    url: `#`,
+    url: `/dapp/portfolio`,
   },
   {
     title: 'Investor Profile',
     icon: invest,
-    url: `#`,
+    url: `/dapp/investor`,
   }
 ]
 
