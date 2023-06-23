@@ -93,6 +93,9 @@ function RoboList() {
           return (
             <div
               key={index}
+              onMouseEnter={() => {
+                handleActive(index)
+              }}
               onClick={() => {
                 handleActive(index)
               }}
@@ -215,7 +218,7 @@ function RoboList() {
             >
               {LIST.map((item, index) => (
                 <SwiperSlide key={item.name} virtualIndex={index}>
-                  <img src={item?.img} />
+                  <img className="sm:mx-auto sm:h-[500px]" src={item?.img} />
                 </SwiperSlide>
               ))}
             </Swiper>

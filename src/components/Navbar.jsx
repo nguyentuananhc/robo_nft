@@ -41,7 +41,7 @@ const Navbar = ({ onLinkClick }) => {
       <div className="z-10 flex w-full flex-wrap items-center justify-between gap-[20px] md:justify-between">
         <a
           href="/explore-our-robots"
-          className="flex gap-1 text-sm font-semibold text-white sm:text-sm xl:text-xs xxl:text-base"
+          className="flex items-center gap-2 text-sm font-semibold text-white sm:text-sm xl:text-xs xxl:text-base"
           onClick={() => {
             setOpen(false)
             onLinkClick && onLinkClick()
