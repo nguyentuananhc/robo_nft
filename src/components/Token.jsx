@@ -176,7 +176,7 @@ function Token() {
             </div>
           </div>
           <div
-            className="mt-16 hidden rounded-lg p-4 text-2xl font-bold text-white xl:block xl:text-base"
+            className="mt-16 hidden w-full rounded-lg p-4 text-2xl font-bold text-white xl:block xl:text-base"
             style={{
               background:
                 'linear-gradient(90deg, #2455EA 0%, rgba(36, 85, 234, 0) 100%)',
