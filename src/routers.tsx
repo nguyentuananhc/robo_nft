@@ -11,6 +11,7 @@ import LandingPage from "./pages/LandingPage";
 import Investor from "./pages/Investor";
 import BuyNFT from "./pages/BuyNFT";
 import Airdrop from "./pages/Airdrop";
+import AirdropDetails from "./pages/Airdrop/AirdropDetails";
 
 const routerList: Array<RouteObject> =  [
 	{
@@ -52,6 +53,10 @@ const routerList: Array<RouteObject> =  [
 			{
 				path: `${PARENT_URL.dapp}/airdrop`,
 				element: <Airdrop />
+			},
+			{
+				path: `${PARENT_URL.dapp}/airdrop/:id`,
+				element: <AirdropDetails />
 			}
 		],
 	},

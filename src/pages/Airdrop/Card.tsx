@@ -1,6 +1,7 @@
 import { Box, ButtonBase, Typography } from '@mui/material'
 import React from 'react'
 import airdrop from '../../assets/images/airdropcard.png'
+import { TYPE } from '.'
 
 const styleDate = {
   fontSize: '14px',
@@ -77,7 +78,7 @@ const Image = ({ hasTime = false }: { hasTime?: boolean }) => {
   )
 }
 
-const Description = () => {
+const Description = ({ isDisplayDescription }) => {
   return (
     <Box
       width="100%"
@@ -88,10 +89,12 @@ const Description = () => {
       <Typography style={styleTitleDesc} marginBottom="12px">
         Roboco - Mission 1
       </Typography>
-      <Typography style={styleValueDesc}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in
-        tellus ac odio lac...
-      </Typography>
+      {isDisplayDescription && (
+        <Typography style={styleValueDesc}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in
+          tellus ac odio lac...
+        </Typography>
+      )}
     </Box>
   )
 }
@@ -113,38 +116,62 @@ const DisplayText = ({ value, title }) => {
   )
 }
 
-const ButtonAction = ({ text }) => {
+const ButtonAction = ({ text, isDisabled }) => {
   return (
-    <Box
-      width="100%"
-      padding="12px"
-      bgcolor="white"
-    >
+    <Box width="100%" padding="12px" bgcolor="white">
       <ButtonBase
         sx={{
           width: '100%',
-          background: '#3C76F5',
-          padding: "8px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center"
+          background: !isDisabled ? '#3C76F5' : '#F4F7FA',
+          padding: '8px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          borderRadius: '6px',
         }}
+        disabled={isDisabled}
       >
-        <Typography fontSize="14px" fontWeight="700" color="white">{text}</Typography>
+        <Typography
+          fontSize="14px"
+          fontWeight="700"
+          color={isDisabled ? '#B3CADD' : 'white'}
+        >
+          {text}
+        </Typography>
       </ButtonBase>
     </Box>
   )
 }
 
-const CardItem = () => {
+interface ICardItem {
+  type: TYPE
+  isClaim?: boolean
+}
+
+const CardItem = ({ type, isClaim }: ICardItem) => {
+  const title =
+    type === TYPE.HISTORY || type === TYPE.FINISHED ? 'Total Reward' : 'Token'
+  const buttonText = type === TYPE.HISTORY && isClaim ? 'Claim' : 'Join'
+
   return (
-    <Box>
-      <Image />
-      <Description />
-      <DisplayText value="$5,000.00" title="Value" />
-      <DisplayText value="5,000.00 USDT" title="Token" />
+    <Box sx={{
+      borderRadius: "8px",
+      overflow: "hidden"
+    }}>
+      <Image hasTime={type === TYPE.POOLS} />
+      <Description isDisplayDescription={type === TYPE.POOLS} />
+      {type === TYPE.POOLS && <DisplayText value="$5,000.00" title="Value" />}
+      <DisplayText value="5,000.00 USDT" title={title} />
       <DisplayText value="49" title="Participants" />
-      <ButtonAction text="Join" />
+      {(type === TYPE.POOLS || (type === TYPE.HISTORY && isClaim)) && (
+        <ButtonAction isDisabled={false} text={buttonText} />
+      )}
+      {type === TYPE.HISTORY && (
+        <DisplayText value="May 19, 2023 7:00 PM" title="Closed" />
+      )}
+      {type === TYPE.HISTORY && !isClaim && (
+        <ButtonAction isDisabled text="2/5" />
+      )}
     </Box>
   )
 }

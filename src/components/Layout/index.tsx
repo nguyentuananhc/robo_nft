@@ -17,7 +17,7 @@ const Layout = () => {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
-        height: '100%',
+        minHeight: '100%',
       }}
     >
       <Sidebar />
