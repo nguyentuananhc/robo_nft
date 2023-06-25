@@ -18,6 +18,7 @@ const Layout = () => {
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
         minHeight: '100%',
+        height: "100%"
       }}
     >
       <Sidebar />
@@ -29,6 +30,7 @@ const Layout = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'stretch',
+          width: "100%"
         }}
       >
         {URL_HIDE_APPBAR.indexOf(location?.pathname)  === -1 && (

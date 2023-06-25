@@ -2,6 +2,7 @@ import { ExpandLess } from '@mui/icons-material'
 import {
   Box,
   Collapse,
+  Link,
   List,
   ListItemButton,
   ListItemIcon,
@@ -11,6 +12,7 @@ import {
 import React, { useState } from 'react'
 import { CustomListItem, CustomListItemButton, MenuItem, iconStyle } from '.'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { useLocation } from 'react-router-dom';
 
 
 
@@ -24,11 +26,21 @@ const GroupCustomListItemButton = styled(ListItemButton)(() => {
 	  fontWeight: 500,
 	  fontSize: '14px',
 	  lineHeight: '18px',
+    '&.Mui-selected': {
+      background: "#2455EA !important"
+    }
 	}
 })
 
 export const GroupMenu = ({ item }: { item: MenuItem }) => {
-  const [open, setOpen] = useState(false)
+  const location = useLocation();
+  const isParentSelected = !!item?.children?.find((child) => {
+    return child.url === location.pathname
+  }) || false
+  const [open, setOpen] = useState(isParentSelected);
+  console.log('isParentSelected', isParentSelected, item?.children)
+
+
 
   const handleToggle = () => {
     setOpen((current) => {
@@ -53,7 +65,8 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
               borderBottomRightRadius: '0px',
             }),
           }}
-          {...(item?.children ? {} : { component: 'a', href: item.url })}
+          {...(item?.children ? {} : { component: Link, to: item.url })}
+          selected={isParentSelected}
         >
           <Box
             style={{
@@ -113,7 +126,8 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
                         : {}),
                     }),
                   }}
-                  {...(child?.children ? {} : { component: 'a', href: child.url })}
+                  {...(child?.children ? {} : { component: Link, to: child.url })}
+                  selected={child.url === location.pathname}
                 >
                   <Box
                     style={{

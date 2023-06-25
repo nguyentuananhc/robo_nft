@@ -78,7 +78,7 @@ const buttonStyle = {
   onSale: {
     background: '#FFE8E9',
     borderRadius: '6px',
-    color: "#FA4856",
+    color: '#FA4856',
     width: '100%',
     fontWeight: 700,
     fontSize: 14,
@@ -206,9 +206,46 @@ const CardItem = ({
             style={{
               padding: 12,
             }}
+            sx={{
+              padding: {
+                lg: '12px',
+                xs: '6px',
+              },
+              gap: {
+                xs: '6px',
+              },
+              flexWrap: {
+                xs: 'wrap',
+                lg: 'nowrap',
+              },
+            }}
           >
-            <ButtonBase style={buttonStyle.charge}>Add</ButtonBase>
-            <ButtonBase style={buttonStyle.claim}>Buy</ButtonBase>
+            <ButtonBase
+              sx={{
+                flexBasis: {
+                  xs: '100%',
+                  lg: '50%',
+                },
+              }}
+              style={buttonStyle.charge}
+            >
+              Add
+            </ButtonBase>
+            <ButtonBase
+              sx={{
+                flexBasis: {
+                  xs: '100%',
+                  lg: '50%',
+                },
+                marginLeft: {
+                  xs: '0px !important',
+                  lg: 'unset'
+                }
+              }}
+              style={buttonStyle.claim}
+            >
+              Buy
+            </ButtonBase>
           </CardActions>
         </>
       )}

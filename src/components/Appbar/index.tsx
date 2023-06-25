@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { ButtonBase, Typography } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import IconButton from '@mui/material/IconButton'
@@ -6,9 +6,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Button from '@mui/material/Button'
 import React from 'react'
 import { useLocation } from 'react-router-dom'
+import robocoImage from '../../assets/images/robocoMobile.png'
+import switchImage from '../../assets/images/switch.png'
 
 const title = {
-  '/dapp/airdrop': "Airdrop  >  Pools",
+  '/dapp/airdrop': 'Airdrop  >  Pools',
   '/dapp/tool/working': 'Tools > Working',
   '/dapp/swap': 'Swap',
   '/dapp/market': 'Market',
@@ -21,7 +23,6 @@ const Appbar = ({
 }: {
   styleContainer?: React.CSSProperties
 }) => {
-
   const location = useLocation()
 
   return (
@@ -31,8 +32,11 @@ const Appbar = ({
         style={{
           height: 66,
           background: '#FFFFFF',
-					boxShadow: 'none',
+          boxShadow: 'none',
           ...styleContainer,
+        }}
+        sx={{
+          display: { lg: 'block', xs: 'none' },
         }}
       >
         <Toolbar
@@ -60,11 +64,18 @@ const Appbar = ({
               component="div"
               sx={{ flexGrow: 1 }}
             >
-              {
-                title[location?.pathname]
-              }
+              {title[location?.pathname]}
             </Typography>
-            <Button style={{ backgroundColor: '#3C76F5', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 8, paddingBottom: 8 }}>
+            <Button
+              style={{
+                backgroundColor: '#3C76F5',
+                borderRadius: 8,
+                paddingLeft: 16,
+                paddingRight: 16,
+                paddingTop: 8,
+                paddingBottom: 8,
+              }}
+            >
               <Typography
                 color="white"
                 variant="h5"
@@ -72,11 +83,56 @@ const Appbar = ({
                 fontWeight={700}
                 component="div"
                 sx={{ flexGrow: 1 }}
-								textTransform="capitalize"
+                textTransform="capitalize"
               >
                 Connect
               </Typography>
             </Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      <AppBar
+        position="static"
+        style={{
+          height: 66,
+          background: '#FFFFFF',
+          boxShadow: 'none',
+          ...styleContainer,
+        }}
+        sx={{
+          display: { lg: 'none', xs: 'block' },
+        }}
+      >
+        <Toolbar
+          style={{
+            minHeight: 'unset',
+            height: '100%',
+            padding: '16px',
+          }}
+        >
+          <Box
+            display="flex"
+            width="100%"
+            height="100%"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <ButtonBase>
+              <img
+                src={robocoImage}
+                style={{ height: '14px', width: '64px' }}
+              />
+            </ButtonBase>
+
+            <ButtonBase>
+              <img
+                src={switchImage}
+                style={{
+                  width: '24px',
+                  height: '24px',
+                }}
+              />
+            </ButtonBase>
           </Box>
         </Toolbar>
       </AppBar>
