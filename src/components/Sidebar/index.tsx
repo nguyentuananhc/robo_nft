@@ -33,6 +33,7 @@ import roboIcon from '../../assets/images/roboIcon.png'
 import invest from '../../assets/images/invest.png'
 import { PARENT_URL } from '../../constants'
 import { GroupMenu } from './GroupMenu'
+import { useLocation } from 'react-router-dom'
 
 const drawerWidth = 300
 
@@ -142,11 +143,17 @@ export const CustomListItemButton = styled(ListItemButton, {
   fontWeight: 500,
   fontSize: '14px',
   lineHeight: '18px',
+  '&.Mui-selected': {
+    background: "#2455EA"
+  }
 }))
 
 export const CustomListItem = styled(ListItem)(() => ({}))
 
 export const handleDisplayMenuItem = (item: MenuItem) => {
+
+  const location = useLocation();
+
   return (
     <CustomListItem
       disablePadding
@@ -155,7 +162,8 @@ export const handleDisplayMenuItem = (item: MenuItem) => {
       }}
     >
       <CustomListItemButton
-        {...(item?.children ? {} : { component: 'a', href: item.url })}
+        {...(item?.children ? {} : { component: Link, to: item.url })}
+        selected={item.url === location.pathname}
       >
         <Box
           style={{

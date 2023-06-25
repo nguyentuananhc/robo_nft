@@ -12,16 +12,20 @@ const BuyTab = ({
 }: Props) => {
 
   return (
-    <Box padding="24px 72px">
+    <Box sx={{
+      padding: {
+        lg: "24px 72px",
+        xs: "12px"
+      }
+    }}>
       <Grid container spacing={3}>
         {Array.from({ length: 10 }).map((item, key) => {
           return (
-            <Grid item xs={3} key={key}>
+            <Grid item xs={6} lg={3}  key={key}>
               <CardItem
                 selectedItem={selectedItem}
                 onClick={setSelectedItem}
                 id={`${key}`}
-                isWorking
 								isShowAPY={false}
                 text1={
                   <Chip
