@@ -35,7 +35,10 @@ const styleTextWorking = {
 const styleNameCard = {
   color: '#2A3141',
   fontWeight: 700,
-  fontSize: 14,
+  fontSize: {
+    lg: '14px',
+    xs: '12px',
+  },
 }
 
 const buttonStyle = {
@@ -153,8 +156,13 @@ const CardItem = ({
         }}
       />
       <CardMedia
+        sx={{
+          height: {
+            lg: '240px',
+            xs: '160px'
+          }
+        }}
         style={{
-          height: 240,
           width: '100%',
           borderRadius: 1,
         }}
@@ -163,7 +171,14 @@ const CardItem = ({
         image={RobotoItem}
         alt="Paella dish"
       />
-      <CardContent style={{ padding: 12 }}>
+      <CardContent
+        sx={{
+          padding: {
+            lg: '12px',
+            xs: '6px',
+          },
+        }}
+      >
         <Box
           display="flex"
           flexDirection="row"
@@ -173,6 +188,7 @@ const CardItem = ({
         >
           <Chip
             label={id || '#019024'}
+            size="small"
             style={{
               fontSize: 10,
               fontWeight: 500,
@@ -203,9 +219,6 @@ const CardItem = ({
         <>
           <Divider style={{ borderColor: '#E5ECF3' }} />
           <CardActions
-            style={{
-              padding: 12,
-            }}
             sx={{
               padding: {
                 lg: '12px',
@@ -239,8 +252,8 @@ const CardItem = ({
                 },
                 marginLeft: {
                   xs: '0px !important',
-                  lg: 'unset'
-                }
+                  lg: 'unset',
+                },
               }}
               style={buttonStyle.claim}
             >

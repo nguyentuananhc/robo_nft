@@ -37,7 +37,14 @@ const style = {
   bgcolor: 'transparent',
   p: 4,
   display: 'flex',
-  gap: '42px',
+  gap: {
+    lg: '42px',
+    xs: "12px"
+  },
+  flexDirection: {
+    lg: 'row',
+    xs: 'column'
+  },
   alignItems: 'center',
 }
 

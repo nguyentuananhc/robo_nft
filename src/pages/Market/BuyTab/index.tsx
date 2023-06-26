@@ -18,7 +18,10 @@ const BuyTab = ({
         xs: "12px"
       }
     }}>
-      <Grid container spacing={3}>
+      <Grid container spacing={{
+        lg: 3,
+        xs: 2
+      }}>
         {Array.from({ length: 10 }).map((item, key) => {
           return (
             <Grid item xs={6} lg={3}  key={key}>
