@@ -10,12 +10,13 @@ import {
 } from '@mui/material'
 import BuyTab from './BuyTab'
 import { CardItemInterface } from './CardItem'
-import BuyCardModal from './BuyCartModal'
 import SellTab from './SellTab'
+import PoolsTab from './PoolsTab'
+import YourStakingTab from './YourStakingTab'
 
 export enum TYPE {
-  BUY = 'Buy',
-  SELL = 'Sell',
+  POOLS = 'Pools',
+  YOUR_STAKING = 'Your Staking',
 }
 
 const theme = createTheme({
@@ -41,8 +42,8 @@ const theme = createTheme({
   },
 })
 
-const Market = () => {
-  const [selectedType, setSelectedType] = useState<TYPE>(TYPE.BUY)
+const Farm = () => {
+  const [selectedType, setSelectedType] = useState<TYPE>(TYPE.POOLS)
   const [selectedItem, setSelectedItem] = useState<Array<CardItemInterface>>([])
 
   const [openBuyModal, setOpenBuyModal] = useState(null)
@@ -59,30 +60,11 @@ const Market = () => {
           }}
         />
         <Divider />
-        {selectedType === TYPE.BUY && (
-          <BuyTab
-            selectedItem={selectedItem}
-            setSelectedItem={setSelectedItem}
-          />
-        )}
-        {selectedType === TYPE.SELL && (
-          <SellTab
-            selectedItem={selectedItem}
-            setSelectedItem={setSelectedItem}
-          />
-        )}
-        {openBuyModal && (
-          <BuyCardModal
-            open={!!openBuyModal}
-            anchorEl={openBuyModal}
-            handleClose={() => {
-              setOpenBuyModal(null)
-            }}
-          />
-        )}
+        {selectedType === TYPE.POOLS && <PoolsTab />}
+        {selectedType === TYPE.YOUR_STAKING && <YourStakingTab />}
       </Box>
     </ThemeProvider>
   )
 }
 
-export default Market
+export default Farm

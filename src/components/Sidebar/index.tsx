@@ -78,7 +78,7 @@ const listMenu: Array<MenuItem> = [
   {
     title: 'Farms',
     icon: farmIcon,
-    url: `#`,
+    url: `/dapp/farm`,
   },
   {
     title: 'Markets',
@@ -94,7 +94,7 @@ const listMenu: Array<MenuItem> = [
     title: 'Investor Profile',
     icon: invest,
     url: `/dapp/investor`,
-  }
+  },
 ]
 
 const theme = createTheme({
@@ -144,15 +144,14 @@ export const CustomListItemButton = styled(ListItemButton, {
   fontSize: '14px',
   lineHeight: '18px',
   '&.Mui-selected': {
-    background: "#2455EA"
-  }
+    background: '#2455EA',
+  },
 }))
 
 export const CustomListItem = styled(ListItem)(() => ({}))
 
 export const handleDisplayMenuItem = (item: MenuItem) => {
-
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <CustomListItem
@@ -258,10 +257,10 @@ const Sidebar = () => {
   return (
     <Box
       component="nav"
-      sx={{ 
-        width: { lg: drawerWidth, xs: 0 }, 
+      sx={{
+        width: { lg: drawerWidth, xs: 0 },
         flexShrink: { lg: 0 },
-        display: { lg: 'block', xs: 'none'}
+        display: { lg: 'block', xs: 'none' },
       }}
       aria-label="mailbox folders"
     >
