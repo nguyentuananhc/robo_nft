@@ -23,36 +23,79 @@ const theme = createTheme({
 
 const style = {
   position: 'absolute',
-  top: '0',
-  left: '0',
-  bottom: '0',
-  right: '0',
+  top: {
+    lg: '0',
+    xs: '50%',
+  },
+  left: {
+    lg: '0',
+    xs: '50%',
+  },
+  bottom: {
+    lg: '0',
+    xs: 'unset',
+  },
+  right: {
+    lg: '0',
+    xs: 'unset',
+  },
   // width: 400,
   bgcolor: 'transparent',
   p: 4,
   display: 'flex',
-  gap: '42px',
+  gap: {
+    lg: '42px',
+    xs: '12px',
+  },
   alignItems: 'center',
   borderRadius: 4,
   overflow: 'hidden',
   flexDirection: 'column',
+  transform: {
+    lg: 'unset',
+    xs: 'translate(-50%, -50%)',
+  },
+  width: {
+    lg: 'unset',
+    xs: '100%'
+  }
 }
 
 const imageStyle = {
-  width: '240px',
-  height: '240px',
+  width: {
+    xs: '160px',
+    lg: '240px'
+  },
+  height: {
+    xs: '160px',
+    lg: '240px'
+  },
+}
+
+const imageStyleItem = {
+  width: '100%',
+  height: '100%',
 }
 
 const containerStyle = {
   display: 'flex',
   flexDirection: 'row',
-  height: '100%',
-  overflow: 'visible',
+  height: {
+    lg: '480px',
+    xs: '320px',
+  },
+  overflow: {
+    lg: 'auto',
+    xs: 'auto',
+  },
   width: '100%',
   justifyContent: 'center',
   alignItems: 'center',
   flexWrap: 'wrap',
-  gap: '24px',
+  gap: {
+    lg: '24px',
+    xs: '12px',
+  },
 }
 
 const subTitle = {
@@ -71,17 +114,43 @@ const PreviewModal = ({ open, handleClose }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Box style={containerStyle}>
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
-            <img src={RobotoItem} style={{ ...imageStyle }} />
+          <Box sx={containerStyle}>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
+            <Box sx={imageStyle}>
+              <img src={RobotoItem} style={{ ...imageStyleItem }} />
+            </Box>
           </Box>
           <Box>
             <ButtonBase

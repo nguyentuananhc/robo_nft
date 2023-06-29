@@ -32,18 +32,23 @@ const BottomBarItem = ({
 
 const BottomBar = () => {
   return (
-    <Box bgcolor="#2A3141" padding="16px 72px">
+    <Box bgcolor="#2A3141" sx={{
+      padding: {
+        lg: "16px 72px",
+        xs: "16px"
+      }
+    }}>
       <Grid container spacing={3}>
-        <Grid item xs={3}>
+        <Grid item lg={3} xs={4}>
           <BottomBarItem />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} xs={4}>
           <BottomBarItem />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item lg={3} xs={4}>
           <BottomBarItem />
         </Grid>
-        <Grid item xs={3}>
+        <Grid item xs={12} lg={3}>
           <ButtonBase
             style={{
               width: '100%',

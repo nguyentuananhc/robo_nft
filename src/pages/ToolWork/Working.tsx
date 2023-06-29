@@ -6,8 +6,12 @@ import ChargeModal from './ChargeModal'
 
 const boxStyle = {
   backgroundColor: '#EFF5FF',
-  borderRadius: 4,
-  padding: 8,
+  borderRadius: "4px",
+  padding: "8px",
+  height: {
+    lg: 'unset',
+    xs: '100%'
+  }
 }
 
 const titleStyle = {
@@ -24,29 +28,28 @@ const valueStyle = {
   color: '#2A3141',
 }
 
-
-
 const Working = () => {
-
-  const [isOpen, setOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [isOpen, setOpen] = useState(false)
+  const [selectedItem, setSelectedItem] = useState(null)
 
   const handleClose = () => {
-    setOpen(false);
+    setOpen(false)
     setSelectedItem(null)
   }
 
   const handleOpen = (id) => {
-    setOpen(true);
+    setOpen(true)
     setSelectedItem(id)
   }
 
   return (
     <Box
-      paddingLeft="72px"
-      paddingRight="72px"
-      paddingTop="24px"
-      paddingBottom="24px"
+      sx={{
+        padding: {
+          lg: '24px 72px',
+          xs: '12px',
+        },
+      }}
       flexGrow="1"
       style={{
         background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
@@ -79,47 +82,105 @@ const Working = () => {
       >
         <Box
           display="flex"
-          justifyContent="space-evenly"
+          sx={{
+            justifyContent: {
+              lg: 'space-evenly',
+              xs: 'flex-start',
+            },
+            flexWrap: {
+              lg: 'unset',
+              xs: 'wrap',
+            },
+          }}
           alignContent="stretch"
           gap="10px"
         >
-          <Box flexBasis="14%">
-            <Box style={boxStyle}>
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '30%',
+              },
+            }}
+          >
+            <Box sx={boxStyle}>
               <Typography style={titleStyle}>Working Amounts</Typography>
               <Typography style={valueStyle}>30</Typography>
             </Box>
           </Box>
-          <Box flexBasis="14%">
-            <Box style={boxStyle}>
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '30%',
+              },
+            }}
+          >
+            <Box sx={boxStyle}>
               <Typography style={titleStyle}>Average APY</Typography>
               <Typography style={valueStyle}>$2,094 / m</Typography>
             </Box>
           </Box>
-          <Box flexBasis="14%">
-            <Box style={boxStyle}>
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '30%',
+              },
+            }}
+          >
+            <Box sx={boxStyle}>
               <Typography style={titleStyle}>Low Battery</Typography>
               <Typography style={valueStyle}>2</Typography>
             </Box>
           </Box>
-          <Box flexBasis="14%">
-            <Box style={boxStyle}>
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '30%',
+              },
+            }}
+          >
+            <Box sx={boxStyle}>
               <Typography style={titleStyle}>Charging</Typography>
               <Typography style={valueStyle}>1</Typography>
             </Box>
           </Box>
-          <Box flexBasis="14%">
-            <Box style={boxStyle}>
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '30%',
+              },
+            }}
+          >
+            <Box sx={boxStyle}>
               <Typography style={titleStyle}>Unclaimed</Typography>
               <Typography style={valueStyle}>$2,094</Typography>
             </Box>
           </Box>
-          <Box flexBasis="14%">
-            <Box style={boxStyle}>
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '30%',
+              },
+            }}
+          >
+            <Box sx={boxStyle}>
               <Typography style={titleStyle}>Claimed</Typography>
               <Typography style={valueStyle}>$2,094</Typography>
             </Box>
           </Box>
-          <Box flexBasis="14%">
+          <Box
+            sx={{
+              flexBasis: {
+                lg: '14%',
+                xs: '100%',
+              },
+            }}
+          >
             <ButtonBase
               style={{
                 width: '100%',
@@ -139,7 +200,7 @@ const Working = () => {
       <Grid container spacing={3}>
         {Array.from({ length: 10 }).map((item, key) => {
           return (
-            <Grid item xs={3} key={key} >
+            <Grid item xs={6} lg={3} key={key}>
               <CardItem
                 // selectedItem={selectedItem}
                 // onClick={setSelectedItem}
@@ -147,20 +208,22 @@ const Working = () => {
                 isWorking={true}
                 text1="Battery"
                 text3="20%"
-								{...(key % 2 === 0 ? {isCharging: true} : {isCharging: false})}
+                {...(key % 2 === 0
+                  ? { isCharging: true }
+                  : { isCharging: false })}
                 onClickWorking={handleOpen}
               />
             </Grid>
           )
         })}
       </Grid>
-      {
-        isOpen && <ChargeModal
+      {isOpen && (
+        <ChargeModal
           open={isOpen}
           handleClose={handleClose}
           item={selectedItem}
         />
-      }
+      )}
     </Box>
   )
 }

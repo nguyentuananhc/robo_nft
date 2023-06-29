@@ -19,9 +19,13 @@ const Airdrop = () => {
     <Box>
       <Filter selectedType={selectedType} handleClick={setSelectedType} />
       <Box
-        padding="24px 72px"
+        
         sx={{
           background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
+          padding: {
+            lg: "24px 72px",
+            xs: "16px"
+          }
         }}
       >
         <Typography
@@ -32,14 +36,17 @@ const Airdrop = () => {
         >
           Upcoming Pools
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={{
+          lg: 3,
+          xs: 2,
+        }}>
           {Array.from({ length: 10 }).map((item, key) => {
             const random = type[Math.floor(Math.random() * type.length)]
             console.log('random', random)
             const isClaim = random === 'History' ? false : true
 
             return (
-              <Grid item xs={4} key={key}>
+              <Grid item xs={6} lg={4} md={4} key={key}>
                 <CardItem type={random as TYPE} isClaim={isClaim} />
               </Grid>
             )

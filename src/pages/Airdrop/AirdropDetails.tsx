@@ -1,12 +1,16 @@
 import { Box, ButtonBase, Typography } from '@mui/material'
 import banner from '../../assets/images/airdropBanner.png'
 import twitter from '../../assets/images/twitter.png'
+import mobilePoolDetails from '../../assets/images/mobilePoolDetails.png'
 import React, { useState } from 'react'
 
 const styleDate = {
-  fontSize: '14px',
   fontWeight: '500',
   color: '#2A3141',
+  fontSize: {
+    lg: '14px',
+    xs: '10px',
+  },
 }
 
 const styleRewardTitle = {
@@ -31,38 +35,93 @@ const styleRewardContainer = {
 
 const ImageBanner = () => {
   return (
-    <Box position="relative">
-      <img
-        src={banner}
-        width="100%"
-        height="100%"
-        style={{ objectFit: 'cover', borderRadius: '8px' }}
-      />
+    <Box position="relative" width="100%">
       <Box
-        display="flex"
-        flexDirection="row"
-        alignItems="center"
-        justifyContent="space-evenly"
-        padding="8px 16px"
-        borderRadius="6px"
-        position="absolute"
-        bottom="12px"
-        left="50%"
+        sx={{
+          borderRadius: {
+            lg: '8px',
+            xs: '0px',
+          },
+          overflow: {
+            lg: 'hidden',
+            xs: 'unset',
+          },
+          height: {
+            lg: '100%',
+            xs: '240px',
+          },
+          display: {
+            lg: 'block',
+            xs: 'none',
+          },
+        }}
+      >
+        <img
+          src={banner}
+          width="100%"
+          height="100%"
+          style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+        />
+      </Box>
+      <Box
+        sx={{
+          borderRadius: {
+            lg: '8px',
+            xs: '0px',
+          },
+          overflow: {
+            lg: 'hidden',
+            xs: 'unset',
+          },
+          height: {
+            lg: '100%',
+            xs: '240px',
+          },
+          display: {
+            lg: 'none',
+            xs: 'block',
+          },
+        }}
+      >
+        <img
+          src={mobilePoolDetails}
+          width="100%"
+          height="100%"
+          style={{ objectFit: 'cover', height: '100%', width: '100%' }}
+        />
+      </Box>
+
+      <Box
         sx={{
           transform: 'translateX(-50%)',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          padding: {
+            lg: '8px 16px',
+            xs: '6px',
+          },
+          borderRadius: '6px',
+          position: 'absolute',
+          bottom: '12px',
+          left: '50%',
+          zIndex: '2',
+          bgcolor: 'white',
+          minWidth: {
+            lg: '250px',
+            xs: '150px',
+          },
         }}
-        zIndex="2"
-        bgcolor="white"
-        width="250px"
       >
-        <Typography style={styleDate}>06</Typography>
-        <Typography style={styleDate}>:</Typography>
-        <Typography style={styleDate}>00</Typography>
-        <Typography style={styleDate}>:</Typography>
-        <Typography style={styleDate}>58</Typography>
-        <Typography style={styleDate}>:</Typography>
-        <Typography style={styleDate}>01</Typography>
-        <Typography style={styleDate}>left</Typography>
+        <Typography sx={styleDate}>06</Typography>
+        <Typography sx={styleDate}>:</Typography>
+        <Typography sx={styleDate}>00</Typography>
+        <Typography sx={styleDate}>:</Typography>
+        <Typography sx={styleDate}>58</Typography>
+        <Typography sx={styleDate}>:</Typography>
+        <Typography sx={styleDate}>01</Typography>
+        <Typography sx={styleDate}>left</Typography>
       </Box>
     </Box>
   )
@@ -115,6 +174,10 @@ const Reward = () => {
         alignItems: 'stretch',
         gap: '12px',
         width: '100%',
+        flexDirection: {
+          lg: 'row',
+          xs: 'column',
+        },
       }}
     >
       <Box style={styleRewardContainer}>
@@ -134,20 +197,29 @@ const Reward = () => {
 }
 
 const Requirement = () => {
-
   const Item = () => {
-
-    const [success, setSuccess] = useState(false);
+    const [success, setSuccess] = useState(false)
 
     return (
       <Box
-        padding="16px"
+        
         borderBottom="1px solid #E5ECF3"
         sx={{
           display: 'flex',
           justifyContent: 'flex-start',
           alignItems: 'center',
-          gap: '16px',
+          gap: {
+            lg: '16px',
+            xs: '12px'
+          },
+          flexWrap: {
+            lg: 'unset',
+            xs: 'wrap',
+          },
+          padding:{
+            lg: "16px",
+            xs: "12px"
+          }
         }}
       >
         <img
@@ -156,7 +228,14 @@ const Requirement = () => {
           height="24px"
           style={{ width: '24px', height: '24px', objectFit: 'contain' }}
         />
-        <Box>
+        <Box
+          sx={{
+            flexBasis: {
+              xs: '100%',
+              lg: 'unset',
+            },
+          }}
+        >
           <Typography style={styleRewardValue}>Follow Roboco Page</Typography>
           <Typography style={styleRewardTitle}>
             Please follow Roboco Twitter page to complete this task.
@@ -175,6 +254,10 @@ const Requirement = () => {
               background: success ? '#D4FFEB' : '#3C76F5',
               padding: '8px 16px',
               borderRadius: '6px',
+              flexBasis: {
+                xs: '100%',
+                lg: 'unset',
+              },
             }}
             onClick={() => {
               setSuccess(true)
@@ -182,12 +265,12 @@ const Requirement = () => {
           >
             <Typography
               sx={{
-                color: success ? "#17C776" : 'white',
+                color: success ? '#17C776' : 'white',
                 fontSize: '14px',
                 fontWeight: '700',
               }}
             >
-              {success ? "Completed" : "Follow"}
+              {success ? 'Completed' : 'Follow'}
             </Typography>
           </ButtonBase>
         </Box>
@@ -211,10 +294,12 @@ const AirdropDetails = () => {
     <Box
       sx={{
         background: 'linear-gradient(180deg, #FFF 0%, #B3CADD 100%)',
-        height: '100%',
-        minHeight: '100%',
+        flexGrow: '1',
+        padding: {
+          lg: '24px 72px',
+          xs: '0px',
+        },
       }}
-      padding="24px 72px"
       display="flex"
       flexDirection="column"
       justifyContent="flex-start"
@@ -222,13 +307,25 @@ const AirdropDetails = () => {
     >
       <ImageBanner />
       <Box
-        marginTop="24px"
-        maxWidth="590px"
-        display="flex"
-        flexDirection="column"
-        justifyContent="flex-start"
-        alignItems="center"
-        gap="12px"
+        sx={{
+          marginTop: {
+            lg: '24px',
+            xs: '0px',
+          },
+          maxWidth: {
+            lg: '590px',
+            xs: 'unset',
+          },
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'center',
+          gap: '12px',
+          padding: {
+            lg: '0px',
+            xs: '16px',
+          },
+        }}
       >
         <Mission />
         <Reward />

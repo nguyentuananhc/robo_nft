@@ -25,13 +25,19 @@ const styleText = {
 const styleTextWorking = {
   color: '#8FAECB',
   fontWeight: 600,
-  fontSize: '12px',
+  fontSize: {
+    lg: "12px",
+    xs: "10px"
+  },
 }
 
 const styleNameCard = {
   color: '#2A3141',
   fontWeight: 700,
-  fontSize: 14,
+  fontSize: {
+    lg: "14px",
+    xs: "12px"
+  },
 }
 
 const buttonStyle = {
@@ -39,19 +45,26 @@ const buttonStyle = {
     background: '#D5FFEB',
     borderRadius: '4px',
     color: '#17C776',
-    width: '50%',
+    width: {
+      lg: '50%',
+      xs: '100%'
+    },
     fontWeight: 700,
-    fontSize: 14,
+    fontSize: "14px",
     height: '34px',
   },
   claim: {
-    width: '50%',
+    width: {
+      lg: '50%',
+      xs: '100%'
+    },
     backgroundColor: '#3C76F5',
     borderRadius: '4px',
     color: '#FFFFFF',
     fontWeight: 700,
-    fontSize: 14,
+    fontSize: "14px",
     height: '34px',
+    marginLeft: '0px !important'
   },
 }
 
@@ -90,8 +103,19 @@ const CardItem = ({
               border: '3px solid #3C76F5',
             }
           : {
-              border: '3px solid transparent',
+              border: '0',
             }),
+        height: '100%',
+        display: {
+          lg: 'block',
+          xs: 'flex'
+        },
+        flexDirection: {
+          lg: 'unset',
+          xs: 'column'
+        },
+        // overflow: 'hidden',
+        // borderRadius: '4px'
       }}
       onClick={() => {
         if (isWorking && onClickWorking) {
@@ -119,17 +143,29 @@ const CardItem = ({
         }}
       />
       <CardMedia
-        style={{
-          height: 240,
+        sx={{
+          height: {
+            lg: '240px',
+            xs: '160px',
+          },
           width: '100%',
           borderRadius: 1,
+          background: 'white'
         }}
         component="img"
         // height="240px"
         image={RobotoItem}
         alt="Paella dish"
       />
-      <CardContent style={{ padding: 12 }}>
+      <CardContent
+        sx={{
+          padding: {
+            lg: '12px !important',
+            xs: '6px !important',
+          },
+          background: 'white'
+        }}
+      >
         <Box
           display="flex"
           flexDirection="row"
@@ -169,7 +205,15 @@ const CardItem = ({
         <>
           <Divider style={{ borderColor: '#E5ECF3' }} />
           {isShowAPY && (
-            <CardContent style={{ padding: 12 }}>
+            <CardContent
+              sx={{
+                padding: {
+                  lg: '12px !important',
+                  xs: '6px !important',
+                },
+                background: 'white'
+              }}
+            >
               <Box>
                 <Box
                   display="flex"
@@ -217,17 +261,42 @@ const CardItem = ({
           <Divider style={{ borderColor: '#E5ECF3' }} />
           {!isCharging ? (
             <CardActions
-              style={{
-                padding: 12,
+              sx={{
+                padding: {
+                  lg: '12px !important',
+                  xs: '6px !important',
+                },
+                flexGrow: {
+                  lg: 'unset',
+                  xs: '1'
+                },
+                flexDirection: {
+                  lg: 'unset',
+                  xs: 'column'
+                },
+                gap: {
+                  lg: '8px',
+                  xs: '6px'
+                },
+                background: 'white',
+                
               }}
             >
-              <ButtonBase style={buttonStyle.charge}>Charge</ButtonBase>
-              <ButtonBase style={buttonStyle.claim}>Claim</ButtonBase>
+              <ButtonBase sx={buttonStyle.charge}>Charge</ButtonBase>
+              <ButtonBase sx={buttonStyle.claim}>Claim</ButtonBase>
             </CardActions>
           ) : (
             <CardActions
-              style={{
-                padding: 12,
+              sx={{
+                padding: {
+                  lg: '12px !important',
+                  xs: '6px !important',
+                },
+                flexGrow: {
+                  lg: 'unset',
+                  xs: '1'
+                },
+                background: 'white',
               }}
             >
               <Box flexGrow="1">
