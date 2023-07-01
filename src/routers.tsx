@@ -13,6 +13,8 @@ import BuyNFT from './pages/BuyNFT'
 import Airdrop from './pages/Airdrop'
 import AirdropDetails from './pages/Airdrop/AirdropDetails'
 import Farm from './pages/Farm'
+import Chat from './pages/ChatPage'
+import ChatBox from './pages/ChatBox'
 
 const routerList: Array<RouteObject> = [
   {
@@ -68,8 +70,12 @@ const routerList: Array<RouteObject> = [
         element: <Farm />,
       },
       {
-        path: `${PARENT_URL.dapp}/chatgpt`,
-        element: <Airdrop />,
+        path: `${PARENT_URL.dapp}/tool/chat`,
+        element: <Chat />,
+      },
+      {
+        path: `${PARENT_URL.dapp}/tool/chat/:id`,
+        element: <ChatBox />,
       },
     ],
   },

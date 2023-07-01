@@ -75,6 +75,7 @@ const listMenu: Array<MenuItem> = [
       {
         title: 'Bot-GPT',
         icon: buyIcon,
+        url: `/dapp/tool/chat`,
       },
     ],
   },
