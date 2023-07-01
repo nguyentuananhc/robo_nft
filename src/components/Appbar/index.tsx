@@ -8,6 +8,8 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import robocoImage from '../../assets/images/robocoMobile.png'
 import switchImage from '../../assets/images/switch.png'
+import { useContext } from 'react'
+import { DappContext } from '../../hooks/DappContext'
 
 const title = {
   '/dapp/airdrop': 'Airdrop  >  Pools',
@@ -24,6 +26,8 @@ const Appbar = ({
   styleContainer?: React.CSSProperties
 }) => {
   const location = useLocation()
+
+  const { handleToggle } = useContext(DappContext);
 
   return (
     <Box sx={{ flexGrow: 0, height: 66 }}>
@@ -124,7 +128,7 @@ const Appbar = ({
               />
             </ButtonBase>
 
-            <ButtonBase>
+            <ButtonBase onClick={handleToggle}>
               <img
                 src={switchImage}
                 style={{

@@ -265,6 +265,12 @@ const BuyCardModal = ({ open, handleClose, anchorEl }) => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        sx={{
+          display: {
+            lg: 'none',
+            xs: 'block',
+          },
+        }}
       >
         <Box sx={modalStyle}>
           <Box

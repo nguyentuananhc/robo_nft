@@ -18,7 +18,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: {
+    lg: '400px',
+    xs: '320px',
+  },
   bgcolor: 'background.paper',
   filter: 'drop-shadow(0px 0px 10px rgba(143, 174, 203, 0.4))',
   borderRadius: '12px',
@@ -103,7 +106,7 @@ const SettingModal = ({
             alignItems="center"
           >
             <Typography style={titleStyle}>Transaction Settings</Typography>
-            <img src={closeIcon} width="20px" height="20px" />
+            <img onClick={handleClose} src={closeIcon} width="20px" height="20px" />
           </Box>
           <Box padding="12px" borderTop="1px solid #E5ECF3">
             <Box
@@ -113,7 +116,15 @@ const SettingModal = ({
               marginBottom="12px"
             >
               <Typography style={textColor}>Slippage Tolerance</Typography>
-              <Typography>0.1%</Typography>
+              <Typography
+                sx={{
+                  fontSize: {
+                    xs: '11px',
+                  },
+                }}
+              >
+                0.1%
+              </Typography>
             </Box>
             <Box
               display="flex"
@@ -139,7 +150,7 @@ const SettingModal = ({
                   <Typography
                     color={step === BTN.A ? 'white' : '#566E9F'}
                     variant="h5"
-                    fontSize="14px"
+                    fontSize="12px"
                     fontWeight={700}
                     component="div"
                     sx={{ flexGrow: 1 }}
@@ -163,7 +174,7 @@ const SettingModal = ({
                   <Typography
                     color={step === BTN.B ? 'white' : '#566E9F'}
                     variant="h5"
-                    fontSize="14px"
+                    fontSize="12px"
                     fontWeight={700}
                     component="div"
                     sx={{ flexGrow: 1 }}
@@ -187,7 +198,7 @@ const SettingModal = ({
                   <Typography
                     color={step === BTN.C ? 'white' : '#566E9F'}
                     variant="h5"
-                    fontSize="14px"
+                    fontSize="12px"
                     fontWeight={700}
                     component="div"
                     sx={{ flexGrow: 1 }}
@@ -207,7 +218,15 @@ const SettingModal = ({
                 bgcolor="#EFF5FF"
               >
                 <Typography>--</Typography>
-                <Typography>%</Typography>
+                <Typography
+                  sx={{
+                    fontSize: {
+                      xs: '12px',
+                    },
+                  }}
+                >
+                  %
+                </Typography>
               </Box>
             </Box>
           </Box>
@@ -228,7 +247,15 @@ const SettingModal = ({
                 bgcolor="#EFF5FF"
               >
                 <Typography>--</Typography>
-                <Typography>%</Typography>
+                <Typography
+                  sx={{
+                    fontSize: {
+                      xs: '12px',
+                    },
+                  }}
+                >
+                  %
+                </Typography>
               </Box>
             </Box>
           </Box>
