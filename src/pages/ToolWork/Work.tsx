@@ -5,26 +5,33 @@ import BottomBar from './BottomBar'
 import { CardItemInterface } from '.'
 
 const Work = () => {
-
-	const [selectedItem, setSelectedItem] = useState<Array<CardItemInterface>>([])
+  const [selectedItem, setSelectedItem] = useState<Array<CardItemInterface>>([])
 
   return (
     <>
       <Box
-        paddingLeft="72px"
-        paddingRight="72px"
-        paddingTop="24px"
-        paddingBottom="24px"
+        sx={{
+          padding: {
+            lg: '24px 72px',
+            xs: '12px',
+          },
+        }}
         flexGrow="1"
         style={{
           background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
         }}
         overflow="auto"
       >
-        <Grid container spacing={3}>
+        <Grid
+          container
+          spacing={{
+            lg: 3,
+            xs: 2,
+          }}
+        >
           {Array.from({ length: 10 }).map((item, key) => {
             return (
-              <Grid item xs={3} key={key}>
+              <Grid item xs={6} lg={3} key={key}>
                 <CardItem
                   selectedItem={selectedItem}
                   onClick={setSelectedItem}
@@ -41,4 +48,4 @@ const Work = () => {
   )
 }
 
-export default Work;
+export default Work

@@ -2,17 +2,29 @@ import { Box, Chip, Grid } from '@mui/material'
 import React from 'react'
 import CardItem from '../CardItem'
 
-
 const TYPE = ['Unbox']
 
 const BoxTab = () => {
   return (
-    <Box padding="24px 72px">
-      <Grid container spacing={3}>
+    <Box
+      sx={{
+        padding: {
+          lg: '24px 72px',
+          xs: '16px',
+        },
+      }}
+    >
+      <Grid
+        container
+        spacing={{
+          lg: 3,
+          xs: 2,
+        }}
+      >
         {Array.from({ length: 10 }).map((item, key) => {
-          const itemType = TYPE[Math.floor(Math.random()* TYPE.length)]
+          const itemType = TYPE[Math.floor(Math.random() * TYPE.length)]
           return (
-            <Grid item xs={3} key={key}>
+            <Grid item xs={6} md={3} lg={3} key={key}>
               <CardItem
                 // selectedItem={selectedItem}
                 // onClick={setSelectedItem}
@@ -45,4 +57,4 @@ const BoxTab = () => {
   )
 }
 
-export default BoxTab;
+export default BoxTab

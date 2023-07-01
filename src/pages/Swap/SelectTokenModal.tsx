@@ -11,7 +11,10 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: {
+    lg: '400px',
+    xs: '320px'
+  },
   bgcolor: 'background.paper',
   filter: 'drop-shadow(0px 0px 10px rgba(143, 174, 203, 0.4))',
   borderRadius: '12px',
@@ -123,7 +126,7 @@ const SelectTokenModal = ({
             alignItems="center"
           >
             <Typography style={titleStyle}>ChooseToken</Typography>
-            <img src={closeIcon} width="20px" height="20px" />
+            <img src={closeIcon} width="20px" height="20px" onClick={handleClose} />
           </Box>
           <Box padding="12px" borderTop="1px solid #E5ECF3">
             <TextField

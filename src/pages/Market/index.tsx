@@ -11,7 +11,7 @@ import {
 import BuyTab from './BuyTab'
 import { CardItemInterface } from './CardItem'
 import BuyCardModal from './BuyCartModal'
-import SellTab from './SellTab';
+import SellTab from './SellTab'
 
 export enum TYPE {
   BUY = 'Buy',
@@ -59,16 +59,18 @@ const Market = () => {
           }}
         />
         <Divider />
-        {
-          selectedType === TYPE.BUY && (
-            <BuyTab selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
-          )
-        }
-        {
-          selectedType === TYPE.SELL && (
-            <SellTab selectedItem={selectedItem} setSelectedItem={setSelectedItem} />
-          )
-        }
+        {selectedType === TYPE.BUY && (
+          <BuyTab
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+          />
+        )}
+        {selectedType === TYPE.SELL && (
+          <SellTab
+            selectedItem={selectedItem}
+            setSelectedItem={setSelectedItem}
+          />
+        )}
         {openBuyModal && (
           <BuyCardModal
             open={!!openBuyModal}

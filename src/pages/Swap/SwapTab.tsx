@@ -18,7 +18,6 @@ import downicon from '../../assets/images/downicon.png'
 import SwapIcon from '../../assets/images/SwapIcon.png'
 import SelectTokenModal from './SelectTokenModal'
 
-
 export const fromToText = {
   color: '#6180AF',
   fontWeight: '600',
@@ -74,7 +73,19 @@ const SwapTab = () => {
           <Divider />
         </>
       )}
-      <CardContent sx={{ padding: '16px' }}>
+      <CardContent
+        sx={{
+          padding: '16px',
+          flexGrow: {
+            xs: 1,
+            lg: 'unset',
+          },
+          alignItems: {
+            xs: 'flex-end',
+            lg: 'unset',
+          },
+        }}
+      >
         {step !== 3 && (
           <>
             <Box
@@ -101,9 +112,9 @@ const SwapTab = () => {
                   borderRadius: '4px',
                   background: '#8FAECB',
                 }}
-								onClick={() => {
-									handleOpenToken(true)
-								}}
+                onClick={() => {
+                  handleOpenToken(true)
+                }}
               >
                 <Typography fontSize="14px" fontWeight="700" color="white">
                   USDT
@@ -113,7 +124,12 @@ const SwapTab = () => {
               <TextField variant="standard" value="100" />
             </Box>
             <Box
-              width="320px"
+              sx={{
+                width: {
+                  lg: "320px",
+                  xs: '100%'
+                }
+              }}
               height="32px"
               display="flex"
               justifyContent="center"
@@ -147,9 +163,9 @@ const SwapTab = () => {
                   borderRadius: '4px',
                   background: '#8FAECB',
                 }}
-								onClick={() => {
-									handleOpenToken(true)
-								}}
+                onClick={() => {
+                  handleOpenToken(true)
+                }}
               >
                 <Typography fontSize="14px" fontWeight="700" color="white">
                   RBCO

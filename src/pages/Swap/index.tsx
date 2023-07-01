@@ -23,11 +23,14 @@ import LiquidityTab from './LiquidityTab';
 
 const styleContainer = {
   background: 'linear-gradient(180deg, #FFFFFF 0%, #B3CADD 100%)',
-  display: 'flex',
+  display: {
+    lg: 'flex',
+    xs: 'block'
+  },
   justifyContent: 'center',
   alignItems: 'center',
   height: '100%',
-  widht: '100%',
+  width: '100%',
 }
 
 const titleText = {
@@ -49,12 +52,27 @@ const Swap = () => {
 	}
 
   return (
-    <Box style={styleContainer}>
+    <Box sx={styleContainer}>
       <Card
         sx={{
-          minWidth: 320,
-          borderRadius: '12px',
+          minWidth: {
+            lg: '320px',
+            xs: '100%'
+          },
+          borderRadius: {
+            lg: '12px',
+            xs: '0px'
+          },
           filter: 'drop-shadow(0px 0px 10px rgba(143, 174, 203, 0.4))',
+          height: {
+            lg: 'unset',
+            xs: '100%'
+          },
+          display: {
+            lg: 'block',
+            xs: 'flex'
+          },
+          flexDirection: 'column'
         }}
       >
         <Box

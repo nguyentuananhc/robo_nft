@@ -41,12 +41,19 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  // width: 400,
+  width: {
+    lg: 'auto',
+    xs: '320px',
+  },
   bgcolor: 'transparent',
   p: 4,
   display: 'flex',
   gap: '42px',
   alignItems: 'center',
+  boxSizing: {
+    lg: 'border-box',
+    xs: 'content-box',
+  },
 }
 
 const titleStyle = {
@@ -57,7 +64,10 @@ const titleStyle = {
 }
 
 const valueStyle = {
-  fontSize: '14px',
+  fontSize: {
+    lg: '14px',
+    xs: '12px',
+  },
   color: '#2A3141',
   fontWeight: '600',
 }
@@ -77,7 +87,10 @@ const greyValue = {
 
 const rightText = {
   fontWeight: 600,
-  fontSize: '14px',
+  fontSize: {
+    lg: '14px',
+    xs: '12px',
+  },
   color: '#151519',
 }
 
@@ -128,8 +141,12 @@ const BuyModal = ({
                   justifyContent="space-between"
                   alignItems="center"
                   sx={{
-                    minWidth: '320px',
+                    minWidth: {
+                      lg: '320px',
+                      xs: '100%',
+                    },
                     background: 'white',
+                    boxSizing: 'border-box',
                   }}
                 >
                   <Typography style={title}>Checkout</Typography>
@@ -177,7 +194,7 @@ const BuyModal = ({
                       alignItems: 'center',
                     }}
                   >
-                    <Typography style={{ ...valueStyle, color: '#8FAECB' }}>
+                    <Typography sx={{ ...valueStyle, color: '#8FAECB' }}>
                       Payment token
                     </Typography>
                     <Box
@@ -186,9 +203,9 @@ const BuyModal = ({
                       alignItems="center"
                       gap="12px"
                     >
-                      <Typography style={rightText}>USDT</Typography>
+                      <Typography sx={rightText}>USDT</Typography>
                       <IOSSwitch />
-                      <Typography style={rightText}>TOKN</Typography>
+                      <Typography sx={rightText}>TOKN</Typography>
                     </Box>
                   </Box>
                 </Box>
@@ -206,10 +223,10 @@ const BuyModal = ({
                       alignItems: 'center',
                     }}
                   >
-                    <Typography style={{ ...valueStyle, color: '#8FAECB' }}>
+                    <Typography sx={{ ...valueStyle, color: '#8FAECB' }}>
                       Total
                     </Typography>
-                    <Typography style={rightText}>$100</Typography>
+                    <Typography sx={rightText}>$100</Typography>
                   </Box>
                 </Box>
 
@@ -224,7 +241,10 @@ const BuyModal = ({
                       background: '#3C76F5',
                       borderRadius: '6px',
                       padding: '8px 16px',
-                      width: '340px',
+                      width: {
+                        xs: '100%',
+                        lg: '340px',
+                      },
                     }}
                     onClick={() => {
                       setStep(1)
@@ -245,7 +265,11 @@ const BuyModal = ({
                   justifyContent="space-between"
                   alignItems="center"
                   sx={{
-                    minWidth: '320px',
+                    minWidth: {
+                      lg: '320px',
+                      xs: '100%',
+                    },
+                    boxSizing: 'border-box',
                     background: 'white',
                   }}
                 >
@@ -317,7 +341,10 @@ const BuyModal = ({
                       background: '#3C76F5',
                       borderRadius: '6px',
                       padding: '8px 16px',
-                      width: '340px',
+                      width: {
+                        xs: '100%',
+                        lg: '340px',
+                      },
                     }}
                     onClick={() => {
                       handleClose()

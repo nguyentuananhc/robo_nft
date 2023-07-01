@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Drawer from '@mui/material/Drawer'
 import { styled, useTheme } from '@mui/material/styles'
 import IconButton from '@mui/material/IconButton'
@@ -16,7 +16,13 @@ import List from '@mui/material/List'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import robocoLogo from '../../assets/images/robocoLogo.png'
-import { Link, ThemeProvider, createTheme } from '@mui/material'
+import {
+  ButtonBase,
+  Link,
+  ThemeProvider,
+  Typography,
+  createTheme,
+} from '@mui/material'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import discordLogo from '../../assets/images/discord.png'
 import youtubeLogo from '../../assets/images/youtube.png'
@@ -31,9 +37,11 @@ import farmIcon from '../../assets/images/farm.png'
 import marketIcon from '../../assets/images/market.png'
 import roboIcon from '../../assets/images/roboIcon.png'
 import invest from '../../assets/images/invest.png'
+import switchImage from '../../assets/images/switchWhite.png'
 import { PARENT_URL } from '../../constants'
 import { GroupMenu } from './GroupMenu'
 import { useLocation } from 'react-router-dom'
+import { DappContext } from '../../hooks/DappContext'
 
 const drawerWidth = 300
 
@@ -67,6 +75,7 @@ const listMenu: Array<MenuItem> = [
       {
         title: 'Bot-GPT',
         icon: buyIcon,
+        url: `/dapp/tool/chat`,
       },
     ],
   },
@@ -78,7 +87,7 @@ const listMenu: Array<MenuItem> = [
   {
     title: 'Farms',
     icon: farmIcon,
-    url: `#`,
+    url: `/dapp/farm`,
   },
   {
     title: 'Markets',
@@ -94,7 +103,7 @@ const listMenu: Array<MenuItem> = [
     title: 'Investor Profile',
     icon: invest,
     url: `/dapp/investor`,
-  }
+  },
 ]
 
 const theme = createTheme({
@@ -144,15 +153,14 @@ export const CustomListItemButton = styled(ListItemButton, {
   fontSize: '14px',
   lineHeight: '18px',
   '&.Mui-selected': {
-    background: "#2455EA"
-  }
+    background: '#2455EA',
+  },
 }))
 
 export const CustomListItem = styled(ListItem)(() => ({}))
 
 export const handleDisplayMenuItem = (item: MenuItem) => {
-
-  const location = useLocation();
+  const location = useLocation()
 
   return (
     <CustomListItem
@@ -186,7 +194,20 @@ export const handleDisplayMenuItem = (item: MenuItem) => {
             <ListItemIcon style={{ minWidth: '18px', marginRight: 8 }}>
               <img src={item.icon} style={iconStyle} />
             </ListItemIcon>
-            <ListItemText primary={item.title} />
+            <ListItemText
+              primary={
+                <Typography
+                  sx={{
+                    fontSize: {
+                      xs: '16px',
+                      lg: '14px',
+                    },
+                  }}
+                >
+                  {item.title}
+                </Typography>
+              }
+            />
           </Box>
           <ArrowForwardIosIcon style={iconStyle} />
         </Box>
@@ -205,6 +226,8 @@ const Sidebar = () => {
     setMobileOpen(!mobileOpen)
   }
 
+  const { openMobile, handleToggle } = useContext(DappContext)
+
   const drawer = (
     <ThemeProvider theme={theme}>
       <Box
@@ -215,12 +238,35 @@ const Sidebar = () => {
         }}
       >
         <Box style={{ flexGrow: 1 }}>
-          <Toolbar style={{ height: 66 }}>
+          <Toolbar
+            style={{ height: 66 }}
+            sx={{
+              justifyContent: 'space-between',
+              padding: {
+                xs: '16px !important',
+                lg: 'unset',
+              },
+            }}
+          >
             <img
               src={robocoLogo}
               alt="logo"
               className="h-[22px] w-[120px] object-contain"
             />
+            <ButtonBase onClick={handleToggle} sx={{
+              display: {
+                lg: 'none',
+                xs: 'block'
+              }
+            }}>
+              <img
+                src={switchImage}
+                style={{
+                  width: '24px',
+                  height: '24px',
+                }}
+              />
+            </ButtonBase>
           </Toolbar>
           <Divider />
           <List>
@@ -258,10 +304,10 @@ const Sidebar = () => {
   return (
     <Box
       component="nav"
-      sx={{ 
-        width: { lg: drawerWidth, xs: 0 }, 
+      sx={{
+        width: { lg: drawerWidth, xs: 0 },
         flexShrink: { lg: 0 },
-        display: { lg: 'block', xs: 'none'}
+        display: { lg: 'block', xs: 'none' },
       }}
       aria-label="mailbox folders"
     >
@@ -269,14 +315,20 @@ const Sidebar = () => {
       <Drawer
         container={container}
         variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
+        open={openMobile}
+        onClose={handleToggle}
         ModalProps={{
           keepMounted: true, // Better open performance on mobile.
         }}
         sx={{
           display: { lg: 'none', xs: 'block' },
-          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+          '& .MuiDrawer-paper': {
+            boxSizing: 'border-box',
+            width: {
+              xs: '100%',
+              lg: drawerWidth,
+            },
+          },
         }}
       >
         {drawer}
