@@ -5,7 +5,10 @@ import PoolItem from './PoolItem'
 function StalkingTab() {
   const [isDisable, setIsDisable] = React.useState(true)
   return (
-    <div className="flex w-full flex-col gap-3 overflow-hidden bg-[#EFF5FF] p-4 pt-[180px] lg:py-6 lg:px-[72px]">
+    <div
+      style={{ minHeight: 'calc(100vh - 66px*2)' }}
+      className="flex w-full flex-col gap-3 overflow-hidden bg-[#EFF5FF] p-4 pt-[180px] lg:py-6 lg:px-[72px]"
+    >
       <div className="hidden flex-col lg:flex">
         <div
           className="h-[240px] w-full"
