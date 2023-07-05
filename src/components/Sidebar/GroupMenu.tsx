@@ -7,40 +7,38 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-	styled,
+  Typography,
+  styled,
 } from '@mui/material'
 import React, { useState } from 'react'
 import { CustomListItem, CustomListItemButton, MenuItem, iconStyle } from '.'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useLocation } from 'react-router-dom';
-
-
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { useLocation } from 'react-router-dom'
 
 const GroupCustomListItemButton = styled(ListItemButton)(() => {
-	return {
-		'&:hover': {
-			background: '#2455EA !important',
-		},
-		borderRadius: '6px',
-	  color: '#BFD7FE',
-	  fontWeight: 500,
-	  fontSize: '14px',
-	  lineHeight: '18px',
+  return {
+    '&:hover': {
+      background: '#2455EA !important',
+    },
+    borderRadius: '6px',
+    color: '#BFD7FE',
+    fontWeight: 500,
+    fontSize: '14px',
+    lineHeight: '18px',
     '&.Mui-selected': {
-      background: "#2455EA !important"
-    }
-	}
+      background: '#2455EA !important',
+    },
+  }
 })
 
 export const GroupMenu = ({ item }: { item: MenuItem }) => {
-  const location = useLocation();
-  const isParentSelected = !!item?.children?.find((child) => {
-    return child.url === location.pathname
-  }) || false
-  const [open, setOpen] = useState(isParentSelected);
+  const location = useLocation()
+  const isParentSelected =
+    !!item?.children?.find((child) => {
+      return child.url === location.pathname
+    }) || false
+  const [open, setOpen] = useState(isParentSelected)
   console.log('isParentSelected', isParentSelected, item?.children)
-
-
 
   const handleToggle = () => {
     setOpen((current) => {
@@ -89,7 +87,20 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
               <ListItemIcon style={{ minWidth: '18px', marginRight: 8 }}>
                 <img src={item.icon} style={iconStyle} />
               </ListItemIcon>
-              <ListItemText primary={item.title} />
+              <ListItemText
+                primary={
+                  <Typography
+                    sx={{
+                      fontSize: {
+                        xs: '16px',
+                        lg: '14px',
+                      },
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+                }
+              />
             </Box>
             {open ? (
               <ExpandLess style={iconStyle} />
@@ -104,7 +115,7 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
           {item?.children?.map((child, index) => {
             return (
               <CustomListItem
-								key={index}
+                key={index}
                 disablePadding
                 style={{
                   marginBottom:
@@ -126,7 +137,9 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
                         : {}),
                     }),
                   }}
-                  {...(child?.children ? {} : { component: Link, to: child.url })}
+                  {...(child?.children
+                    ? {}
+                    : { component: Link, to: child.url })}
                   selected={child.url === location.pathname}
                 >
                   <Box
@@ -136,7 +149,7 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
                       justifyContent: 'space-between',
                       alignItems: 'center',
                       flexWrap: 'nowrap',
-											paddingLeft: 22,
+                      paddingLeft: 22,
                     }}
                   >
                     <Box
@@ -153,7 +166,20 @@ export const GroupMenu = ({ item }: { item: MenuItem }) => {
                       >
                         <img src={child.icon} style={iconStyle} />
                       </ListItemIcon>
-                      <ListItemText primary={child.title} />
+                      <ListItemText
+                        primary={
+                          <Typography
+                            sx={{
+                              fontSize: {
+                                xs: '16px',
+                                lg: '14px',
+                              },
+                            }}
+                          >
+                            {child.title}
+                          </Typography>
+                        }
+                      />
                     </Box>
                     <ArrowForwardIosIcon style={iconStyle} />
                   </Box>

@@ -1,20 +1,33 @@
 import { Box, Chip, Grid } from '@mui/material'
 import React from 'react'
 import CardItem from '../CardItem'
-import UnBox from '../Unbox'
+import UnBox from '../UnBox'
 
 const TYPE = ['Unbox']
 
 const BoxTab = () => {
   const [isOpenUnbox, setUnbox] = React.useState(false)
   return (
-    <Box padding="24px 72px">
+    <Box
+      sx={{
+        padding: {
+          lg: '24px 72px',
+          xs: '16px',
+        },
+      }}
+    >
       {isOpenUnbox && <UnBox setUnbox={setUnbox} />}
-      <Grid container spacing={3}>
+      <Grid
+        container
+        spacing={{
+          lg: 3,
+          xs: 2,
+        }}
+      >
         {Array.from({ length: 10 }).map((item, key) => {
           const itemType = TYPE[Math.floor(Math.random() * TYPE.length)]
           return (
-            <Grid item xs={3} key={key}>
+            <Grid item xs={6} md={3} lg={3} key={key}>
               <CardItem
                 // selectedItem={selectedItem}
                 onClick={() => setUnbox(true)}

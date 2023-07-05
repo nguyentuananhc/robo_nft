@@ -8,6 +8,7 @@ import Appbar from '../../components/Appbar'
 import PreviewModal from './PreviewModal'
 import BuyModal from './BuyModal'
 import Wallet from '../Wallet'
+import BlackHeader from './BlackHeader'
 
 const subTitle = {
   fontWeight: 800,
@@ -93,107 +94,7 @@ const BuyNFT = () => {
           }}
         />
       </Box>
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: {
-            lg: '16px 72px',
-            xs: '16px',
-          },
-          position: 'relative',
-          zIndex: 2,
-          background: {
-            lg: 'unset',
-            xs: 'linear-gradient(180deg, rgba(23, 33, 84, 0.00) 0%, #172154 100%), #1E42D7;',
-          },
-        }}
-      >
-        <Typography
-          color="white"
-          variant="h5"
-          fontSize="14px"
-          fontWeight={500}
-          component="div"
-          sx={{
-            flexGrow: 1,
-            display: {
-              lg: 'block',
-              xs: 'none',
-            },
-          }}
-        >
-          Buy
-        </Typography>
-        <Box
-          sx={{
-            width: '64px',
-            height: '14px',
-            display: {
-              lg: 'none',
-              xs: 'block',
-            },
-          }}
-        >
-          <img
-            src={robocoMobile}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </Box>
-        <Button
-          sx={{
-            backgroundColor: '#3C76F5',
-            borderRadius: '8px',
-            paddingLeft: '16px',
-            paddingRight: '16px',
-            paddingTop: '8px',
-            paddingBottom: '8px',
-            display: {
-              lg: 'block',
-              xs: 'none',
-            },
-          }}
-          onClick={() => {
-            setOpenWallet(true)
-          }}
-        >
-          <Typography
-            color="white"
-            variant="h5"
-            fontSize="14px"
-            fontWeight={700}
-            component="div"
-            sx={{ flexGrow: 1 }}
-            textTransform="capitalize"
-          >
-            Connect
-          </Typography>
-        </Button>
-        <Box
-          sx={{
-            width: '24px',
-            height: '24px',
-            display: {
-              lg: 'none',
-              xs: 'block',
-            },
-          }}
-        >
-          <img
-            src={switchImage}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-            }}
-          />
-        </Box>
-      </Box>
+      <BlackHeader setOpenWallet={setOpenWallet} />
       <Box
         sx={{
           display: {

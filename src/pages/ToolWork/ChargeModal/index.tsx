@@ -24,6 +24,16 @@ const theme = createTheme({
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        bar1Determinate: {
+          background: '#17C776'
+        },
+        determinate: {
+          background: '#D4FFEB'
+        }
+      }
+    },
   },
 })
 
@@ -36,8 +46,15 @@ const style = {
   bgcolor: 'transparent',
   p: 4,
   display: 'flex',
-  gap: '42px',
+  gap: {
+    lg: '42px',
+    xs: '12px'
+  },
   alignItems: 'center',
+  flexDirection: {
+    lg: 'row',
+    xs: 'column'
+  }
 }
 
 const titleStyle = {

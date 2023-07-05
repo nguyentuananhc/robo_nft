@@ -42,7 +42,10 @@ const styleTextWorking = {
 const styleNameCard = {
   color: '#2A3141',
   fontWeight: 700,
-  fontSize: 14,
+  fontSize: {
+    lg: '14px',
+    xs: '12px'
+  },
 }
 
 const buttonStyle = {
@@ -124,7 +127,7 @@ const CardItem = ({
               border: '3px solid #3C76F5',
             }
           : {
-              border: '3px solid transparent',
+              border: '0px',
             }),
       }}
       onClick={() => {
@@ -134,11 +137,9 @@ const CardItem = ({
         // } else {
         //   onClick((old) => {
         //     const filter = old?.filter((currentItem) => currentItem?.id !== id)
-
         //     if (filter.length !== old.length) {
         //       return filter
         //     }
-
         //     return [...old, { id: id }]
         //   })
         // }
@@ -154,9 +155,15 @@ const CardItem = ({
         }}
       />
       <CardMedia
-        style={{
-          height: 240,
-          width: '100%',
+        sx={{
+          height: {
+            lg: '240px',
+            xs: '166px',
+          },
+          width: {
+            lg: '100%',
+            xs: '100%',
+          },
           borderRadius: 1,
         }}
         component="img"
@@ -164,7 +171,14 @@ const CardItem = ({
         image={RobotoItem}
         alt="Paella dish"
       />
-      <CardContent style={{ padding: 12 }}>
+      <CardContent
+        sx={{
+          padding: {
+            lg: '12px',
+            xs: '6px',
+          },
+        }}
+      >
         <Box
           display="flex"
           flexDirection="row"
@@ -181,6 +195,7 @@ const CardItem = ({
               backgroundColor: '#DBE8FE',
               color: '#151519',
             }}
+            size="small"
           />
           <Typography sx={styleText} style={{ textAlign: 'right' }}>
             {text1 || 'APY'}
@@ -204,8 +219,11 @@ const CardItem = ({
         <>
           <Divider style={{ borderColor: '#E5ECF3' }} />
           <CardActions
-            style={{
-              padding: 12,
+            sx={{
+              padding: {
+                lg: "12px",
+                xs: '6px'
+              },
             }}
           >
             <ButtonBase style={buttonStyle.receive}>Working</ButtonBase>
@@ -216,8 +234,11 @@ const CardItem = ({
         <>
           <Divider style={{ borderColor: '#E5ECF3' }} />
           <CardActions
-            style={{
-              padding: 12,
+            sx={{
+              padding: {
+                lg: "12px",
+                xs: '6px'
+              },
             }}
           >
             <ButtonBase style={buttonStyle.receive}>Unbox</ButtonBase>
@@ -228,8 +249,11 @@ const CardItem = ({
         <>
           <Divider style={{ borderColor: '#E5ECF3' }} />
           <CardActions
-            style={{
-              padding: 12,
+            sx={{
+              padding: {
+                lg: "12px",
+                xs: '6px'
+              },
             }}
           >
             <ButtonBase style={buttonStyle.receive}>Work</ButtonBase>
@@ -240,8 +264,11 @@ const CardItem = ({
         <>
           <Divider style={{ borderColor: '#E5ECF3' }} />
           <CardActions
-            style={{
-              padding: 12,
+            sx={{
+              padding: {
+                lg: "12px",
+                xs: '6px'
+              },
             }}
           >
             <ButtonBase style={buttonStyle.onSale}>On Sale</ButtonBase>

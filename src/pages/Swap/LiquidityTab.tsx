@@ -33,7 +33,23 @@ const LiquidityTab = () => {
   return (
     <>
       {step === 0 && (
-        <Box padding="12px">
+        <Box
+          padding="12px"
+          sx={{
+            flexGrow: {
+              xs: 1,
+              lg: 'unset',
+            },
+            display: {
+              xs: 'flex',
+              lg: 'block',
+            },
+            flexDirection: {
+              xs: 'column',
+              lg: 'unset',
+            },
+          }}
+        >
           <Box
             padding="12px"
             display="flex"
@@ -41,6 +57,12 @@ const LiquidityTab = () => {
             alignItems="center"
             bgcolor="#F4F7FA"
             borderRadius="4px"
+            sx={{
+              flexGrow: {
+                xs: 1,
+                lg: 'unset',
+              },
+            }}
           >
             <Typography
               color="#8FAECB"
@@ -73,8 +95,20 @@ const LiquidityTab = () => {
             overflowY: 'auto',
             overflowX: 'hidden',
           }}
-          height="300px"
-          maxHeight="300px"
+          sx={{
+            flexGrow: {
+              xs: 1,
+              lg: 'unset',
+            },
+            height: {
+              lg: '300px',
+              xs: '500px',
+            },
+            maxHeight: {
+              lg: '300px',
+              xs: 'unset',
+            },
+          }}
         >
           <Box>
             {Array.from({ length: 12 }).map((item, key) => {
@@ -101,7 +135,14 @@ const LiquidityTab = () => {
         </Box>
       )}
       {step === 2 && (
-        <>
+        <Box
+          sx={{
+            flexGrow: {
+              xs: 1,
+              lg: 'unset',
+            },
+          }}
+        >
           <Box
             display="flex"
             justifyContent="space-between"
@@ -139,7 +180,12 @@ const LiquidityTab = () => {
             <TextField variant="standard" value="100" />
           </Box>
           <Box
-            width="320px"
+            sx={{
+              width: {
+                lg: "320px",
+                xs: '100%'
+              }
+            }}
             height="32px"
             display="flex"
             justifyContent="center"
@@ -189,7 +235,7 @@ const LiquidityTab = () => {
 				0
 			</Typography> */}
           </Box>
-        </>
+        </Box>
       )}
       <Divider />
       <Box padding="12px">
@@ -233,7 +279,7 @@ const LiquidityTab = () => {
             </Typography>
           </ButtonBase>
         )}
-				{step === 2 && (
+        {step === 2 && (
           <ButtonBase
             sx={{
               width: '100%',

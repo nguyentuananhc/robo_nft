@@ -13,6 +13,8 @@ import {
   LinearProgress,
 } from '@mui/material'
 import RobotoItem from '../../../assets/images/RobotoItem.png'
+import Flash from '../../../assets/images/flash.png'
+import redbattery from '../../../assets/images/redbattery.png'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { CardItemInterface } from '..'
 
@@ -52,6 +54,7 @@ const buttonStyle = {
     fontWeight: 700,
     fontSize: "14px",
     height: '34px',
+    gap: '8px'
   },
   claim: {
     width: {
@@ -114,6 +117,7 @@ const CardItem = ({
           lg: 'unset',
           xs: 'column'
         },
+        borderRadius: '8px'
         // overflow: 'hidden',
         // borderRadius: '4px'
       }}
@@ -174,7 +178,7 @@ const CardItem = ({
           marginBottom="4px"
         >
           <Chip
-            label={id || '#019024'}
+            label={id ? `#${id}01239` : '#019024'}
             style={{
               fontSize: 10,
               fontWeight: 500,
@@ -182,6 +186,7 @@ const CardItem = ({
               backgroundColor: '#DBE8FE',
               color: '#151519',
             }}
+            size="small"
           />
           <Typography sx={styleText} style={{ textAlign: 'right' }}>
             {text1 || 'APY'}
@@ -197,7 +202,23 @@ const CardItem = ({
             {text2 || 'Astronauto'}
           </Typography>
           <Typography sx={styleNameCard} style={{ textAlign: 'right' }}>
-            {text3 || '$4/m'}
+            {text1 === 'Battery' ? (
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '4px',
+                }}
+              >
+                <img
+                  src={redbattery}
+                  style={{ width: '18px', height: '18px' }}
+                />
+                {text3}
+              </Box>
+            ) : (
+              '$4/m'
+            )}
           </Typography>
         </Box>
       </CardContent>
@@ -282,7 +303,7 @@ const CardItem = ({
                 
               }}
             >
-              <ButtonBase sx={buttonStyle.charge}>Charge</ButtonBase>
+              <ButtonBase sx={buttonStyle.charge}><img src={Flash} style={{ width: '16px', height: '16px'}} />Charge</ButtonBase>
               <ButtonBase sx={buttonStyle.claim}>Claim</ButtonBase>
             </CardActions>
           ) : (

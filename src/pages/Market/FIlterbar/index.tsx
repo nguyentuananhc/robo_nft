@@ -32,6 +32,25 @@ const theme = createTheme({
         },
       },
     },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontSize: '14px'
+        }
+      }
+    },
+    MuiButtonGroup: {
+      styleOverrides: {
+        grouped: {
+          borderRight: 'none !important',
+        },
+        root: {
+          boxShadow: 'none',
+          borderRadius: '6px',
+          background: '#EFF5FF',
+        },
+      },
+    },
   },
 })
 const FilterBar = ({
@@ -92,7 +111,7 @@ const FilterBar = ({
               <Button
                 style={{
                   backgroundColor:
-                    selectedType === TYPE.BUY ? '#3C76F5' : 'white',
+                    selectedType === TYPE.BUY ? '#3C76F5' : '#EFF5FF',
                   paddingLeft: 16,
                   paddingRight: 16,
                   paddingTop: 8,
@@ -122,7 +141,7 @@ const FilterBar = ({
               <Button
                 style={{
                   backgroundColor:
-                    selectedType === TYPE.SELL ? '#3C76F5' : 'white',
+                    selectedType === TYPE.SELL ? '#3C76F5' : '#EFF5FF',
                   paddingLeft: 16,
                   paddingRight: 16,
                   paddingTop: 8,

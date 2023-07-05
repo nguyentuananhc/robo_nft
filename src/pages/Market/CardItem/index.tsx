@@ -13,6 +13,7 @@ import {
   LinearProgress,
 } from '@mui/material'
 import RobotoItem from '../../../assets/images/RobotoItem.png'
+import addcart from '../../../assets/images/addcart.png'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 
 export interface CardItemInterface {
@@ -120,6 +121,7 @@ const CardItem = ({
   return (
     <Card
       sx={{
+        borderRadius: '8px',
         width: '100%',
         position: 'relative',
         ...(isSelected
@@ -127,7 +129,7 @@ const CardItem = ({
               border: '3px solid #3C76F5',
             }
           : {
-              border: '3px solid transparent',
+              border: '0px',
             }),
       }}
       onClick={() => {
@@ -159,8 +161,8 @@ const CardItem = ({
         sx={{
           height: {
             lg: '240px',
-            xs: '160px'
-          }
+            xs: '160px',
+          },
         }}
         style={{
           width: '100%',
@@ -239,9 +241,17 @@ const CardItem = ({
                   xs: '100%',
                   lg: '50%',
                 },
+                gap: '10px'
               }}
               style={buttonStyle.charge}
             >
+              <img
+                src={addcart}
+                style={{
+                  width: '18px',
+                  height: '18px',
+                }}
+              />
               Add
             </ButtonBase>
             <ButtonBase
