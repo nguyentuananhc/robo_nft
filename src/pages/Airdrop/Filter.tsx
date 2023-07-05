@@ -21,6 +21,7 @@ const Filter = ({ selectedType, handleClick }) => {
             lg: 'unset',
             xs: 'flex',
           },
+          boxShadow: 'none',
         }}
       >
         <Button
