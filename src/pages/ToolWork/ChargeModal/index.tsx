@@ -24,6 +24,16 @@ const theme = createTheme({
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        bar1Determinate: {
+          background: '#17C776'
+        },
+        determinate: {
+          background: '#D4FFEB'
+        }
+      }
+    },
   },
 })
 

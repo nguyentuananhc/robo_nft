@@ -8,12 +8,18 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 import robocoImage from '../../assets/images/robocoMobile.png'
 import switchImage from '../../assets/images/switch.png'
+import rightArrow from '../../assets/images/rightArrow.png'
 import { useContext } from 'react'
 import { DappContext } from '../../hooks/DappContext'
 
 const title = {
   '/dapp/airdrop': 'Airdrop  >  Pools',
-  '/dapp/tool/working': 'Tools > Working',
+  '/dapp/tool/working': (
+    <Box sx={{ display: 'flex' , alignItems: 'center', gap: '8px'}}>
+      Tools <img src={rightArrow} style={{ height: '18px', width: '18px' }} />{' '}
+      Working
+    </Box>
+  ),
   '/dapp/swap': 'Swap',
   '/dapp/market': 'Market',
   '/dapp/portfolio': 'Robo Portfolio',
@@ -27,7 +33,7 @@ const Appbar = ({
 }) => {
   const location = useLocation()
 
-  const { handleToggle } = useContext(DappContext);
+  const { handleToggle } = useContext(DappContext)
 
   return (
     <Box sx={{ flexGrow: 0, height: 66 }}>
