@@ -23,10 +23,15 @@ const containerStyle = {
   flexGrow: 1,
 }
 
+const arr = ['Active members', 'Team Investment']
+
 const Item = ({ title, value }) => {
+  console.log('title', title,arr, arr.indexOf(title.trim()))
   return (
-    <Box width="100%" bgcolor="#172154" borderRadius="6px">
-      <Box padding="16px">
+    <Box width="100%" bgcolor="#172154" borderRadius="6px" overflow="hidden">
+      <Box padding="16px" sx={{
+        background: (arr.indexOf(title) !== -1 ? '#1E338A' : '#172154')
+      }}>
         <Typography
           fontWeight="400"
           fontSize="16px"
@@ -174,8 +179,8 @@ const Investor = () => {
     return (
       <Box sx={itemStyle}>
         <Item value="00" title="Active members" />
-        <Item value="00" title="Active members" />
-        <Item value="00" title="Active members" />
+        <Item value="00" title="Referred NFT Value" />
+        <Item value="00" title="Commission Earned" />
       </Box>
     )
   }
@@ -223,9 +228,9 @@ const Investor = () => {
   const Third = () => {
     return (
       <Box sx={itemStyle}>
-        <Item value="00" title="Active members" />
-        <Item value="00" title="Active members" />
-        <Item value="00" title="Active members" />
+        <Item value="00" title="Team Investment" />
+        <Item value="00" title="Team Staking" />
+        <Item value="00" title="Commission Earned" />
       </Box>
     )
   }

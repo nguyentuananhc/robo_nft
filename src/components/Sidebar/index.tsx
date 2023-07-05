@@ -43,7 +43,7 @@ import { GroupMenu } from './GroupMenu'
 import { useLocation } from 'react-router-dom'
 import { DappContext } from '../../hooks/DappContext'
 
-const drawerWidth = 300
+const drawerWidth = 237;
 
 export interface MenuItem {
   title: string
@@ -287,7 +287,7 @@ const Sidebar = () => {
             style={{
               padding: '16px 28px',
               display: 'flex',
-              justifyContent: 'space-around',
+              justifyContent: 'space-between',
             }}
           >
             <img src={discordLogo} alt="discord" style={iconStyle} />

@@ -32,6 +32,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontSize: '14px'
+        }
+      }
+    }
   },
 })
 const FilterBar = ({

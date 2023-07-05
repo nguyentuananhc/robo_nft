@@ -11,6 +11,7 @@ import {
   Toolbar,
   Typography,
   createTheme,
+  outlinedInputClasses,
 } from '@mui/material'
 import { TYPE } from '..'
 import CartIcon from '../../../assets/images/cartIcon.png'
@@ -31,8 +32,43 @@ const theme = createTheme({
         notchedOutline: {
           border: 'none',
         },
+        input: {
+          padding: '8px'
+        }
       },
     },
+    MuiButtonGroup: {
+      styleOverrides: {
+        grouped: {
+          borderRight: 'none !important',
+        },
+        root: {
+          boxShadow: 'none',
+          borderRadius: '6px',
+          background: '#EFF5FF',
+        },
+      },
+    },
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          height: '100%',
+          [`& .${outlinedInputClasses.root}`]: {
+            height: '100%',
+          },
+          [`& .${outlinedInputClasses.input}`]: {
+            fontSize: '14px',
+          },
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          fontSize: '14px'
+        }
+      }
+    }
   },
 })
 
@@ -66,7 +102,7 @@ const FilterBar = ({
           height: 66,
           background: '#FFFFFF',
           boxShadow: 'none',
-          borderBottom: '1px solid #E5ECF3'
+          borderBottom: '1px solid #E5ECF3',
         }}
       >
         <Toolbar
@@ -107,17 +143,19 @@ const FilterBar = ({
               <Button
                 style={{
                   backgroundColor:
-                    selectedType === TYPE.ALL ? '#3C76F5' : 'white',
+                    selectedType === TYPE.ALL ? '#3C76F5' : '#EFF5FF',
                   paddingLeft: 16,
                   paddingRight: 16,
                   paddingTop: 8,
                   paddingBottom: 8,
+                  borderRadius: '4px',
                 }}
                 sx={{
                   flexGrow: {
                     xs: '1',
                     lg: '0',
                   },
+                  minWidth: '80px',
                 }}
                 onClick={() => {
                   handleClick(TYPE.ALL)
@@ -126,10 +164,9 @@ const FilterBar = ({
                 <Typography
                   color={selectedType === TYPE.ALL ? 'white' : '#566E9F'}
                   variant="h5"
-                  fontSize="14px"
-                  fontWeight={700}
+                  fontWeight={selectedType === TYPE.ALL ? 700 : 400}
                   component="div"
-                  sx={{ flexGrow: 1 }}
+                  sx={{ flexGrow: 1, fontSize: { xs: '10px', lg: '14px' } }}
                   textTransform="capitalize"
                 >
                   {TYPE.ALL}
@@ -138,17 +175,19 @@ const FilterBar = ({
               <Button
                 style={{
                   backgroundColor:
-                    selectedType === TYPE.BOT ? '#3C76F5' : 'white',
+                    selectedType === TYPE.BOT ? '#3C76F5' : '#EFF5FF',
                   paddingLeft: 16,
                   paddingRight: 16,
                   paddingTop: 8,
                   paddingBottom: 8,
+                  borderRadius: '4px',
                 }}
                 sx={{
                   flexGrow: {
                     xs: '1',
                     lg: '0',
                   },
+                  minWidth: '80px',
                 }}
                 onClick={() => {
                   handleClick(TYPE.BOT)
@@ -157,10 +196,9 @@ const FilterBar = ({
                 <Typography
                   color={selectedType === TYPE.BOT ? 'white' : '#566E9F'}
                   variant="h5"
-                  fontSize="14px"
-                  fontWeight={700}
+                  fontWeight={selectedType === TYPE.BOT ? 700 : 400}
                   component="div"
-                  sx={{ flexGrow: 1 }}
+                  sx={{ flexGrow: 1, fontSize: { xs: '10px', lg: '14px' } }}
                   textTransform="capitalize"
                 >
                   {TYPE.BOT}
@@ -169,17 +207,19 @@ const FilterBar = ({
               <Button
                 style={{
                   backgroundColor:
-                    selectedType === TYPE.BOX ? '#3C76F5' : 'white',
+                    selectedType === TYPE.BOX ? '#3C76F5' : '#EFF5FF',
                   paddingLeft: 16,
                   paddingRight: 16,
                   paddingTop: 8,
                   paddingBottom: 8,
+                  borderRadius: '4px',
                 }}
                 sx={{
                   flexGrow: {
                     xs: '1',
                     lg: '0',
                   },
+                  minWidth: '80px',
                 }}
                 onClick={() => {
                   handleClick(TYPE.BOX)
@@ -189,9 +229,9 @@ const FilterBar = ({
                   color={selectedType === TYPE.BOX ? 'white' : '#566E9F'}
                   variant="h5"
                   fontSize="14px"
-                  fontWeight={700}
+                  fontWeight={selectedType === TYPE.BOX ? 700 : 400}
                   component="div"
-                  sx={{ flexGrow: 1 }}
+                  sx={{ flexGrow: 1, fontSize: { xs: '10px', lg: '14px' } }}
                   textTransform="capitalize"
                 >
                   {TYPE.BOX}
@@ -209,6 +249,7 @@ const FilterBar = ({
                         lg: 'inline-flex',
                         xs: 'none',
                       },
+                      borderRadius: '6px'
                     }}
                   >
                     <Button
@@ -216,11 +257,12 @@ const FilterBar = ({
                         backgroundColor:
                           selectedTabFilter === FILTER_TYPE.ALL
                             ? '#3C76F5'
-                            : 'white',
+                            : '#EFF5FF',
                         paddingLeft: 16,
                         paddingRight: 16,
                         paddingTop: 8,
                         paddingBottom: 8,
+                        borderRadius: '4px',
                       }}
                       onClick={() => {
                         handleFilterClick(FILTER_TYPE.ALL)
@@ -234,9 +276,14 @@ const FilterBar = ({
                         }
                         variant="h5"
                         fontSize="14px"
-                        fontWeight={700}
+                        fontWeight={
+                          selectedTabFilter === FILTER_TYPE.ALL ? 700 : 400
+                        }
                         component="div"
-                        sx={{ flexGrow: 1 }}
+                        sx={{
+                          flexGrow: 1,
+                          fontSize: { xs: '10px', lg: '14px' },
+                        }}
                         textTransform="capitalize"
                       >
                         {FILTER_TYPE.ALL}
@@ -247,11 +294,12 @@ const FilterBar = ({
                         backgroundColor:
                           selectedTabFilter === FILTER_TYPE.WORKING
                             ? '#3C76F5'
-                            : 'white',
+                            : '#EFF5FF',
                         paddingLeft: 16,
                         paddingRight: 16,
                         paddingTop: 8,
                         paddingBottom: 8,
+                        borderRadius: '4px',
                       }}
                       onClick={() => {
                         handleFilterClick(FILTER_TYPE.WORKING)
@@ -265,9 +313,14 @@ const FilterBar = ({
                         }
                         variant="h5"
                         fontSize="14px"
-                        fontWeight={700}
+                        fontWeight={
+                          selectedTabFilter === FILTER_TYPE.WORKING ? 700 : 400
+                        }
                         component="div"
-                        sx={{ flexGrow: 1 }}
+                        sx={{
+                          flexGrow: 1,
+                          fontSize: { xs: '10px', lg: '14px' },
+                        }}
                         textTransform="capitalize"
                       >
                         {FILTER_TYPE.WORKING}
@@ -278,11 +331,12 @@ const FilterBar = ({
                         backgroundColor:
                           selectedTabFilter === FILTER_TYPE.SALE
                             ? '#3C76F5'
-                            : 'white',
+                            : '#EFF5FF',
                         paddingLeft: 16,
                         paddingRight: 16,
                         paddingTop: 8,
                         paddingBottom: 8,
+                        borderRadius: '4px',
                       }}
                       onClick={() => {
                         handleFilterClick(FILTER_TYPE.SALE)
@@ -296,9 +350,14 @@ const FilterBar = ({
                         }
                         variant="h5"
                         fontSize="14px"
-                        fontWeight={700}
+                        fontWeight={
+                          selectedTabFilter === FILTER_TYPE.SALE ? 700 : 400
+                        }
                         component="div"
-                        sx={{ flexGrow: 1 }}
+                        sx={{
+                          flexGrow: 1,
+                          fontSize: { xs: '10px', lg: '14px' },
+                        }}
                         textTransform="capitalize"
                       >
                         {FILTER_TYPE.SALE}

@@ -43,6 +43,23 @@ const theme = createTheme({
         },
       },
     },
+    MuiLinearProgress: {
+      styleOverrides: {
+        bar1Determinate: {
+          background: '#17C776'
+        },
+        determinate: {
+          background: '#D4FFEB'
+        }
+      }
+    },
+    MuiChip: {
+      styleOverrides: {
+        labelSmall: {
+          padding: '4px'
+        }
+      }
+    }
   },
 })
 
@@ -53,7 +70,7 @@ export interface CardItemInterface {
 
 export enum TYPE {
   WORK = 'WORK',
-  WORKING = 'WORKING',
+  WORKING = 'Working',
   SALE = 'Sale',
   ALL = 'All',
 }
