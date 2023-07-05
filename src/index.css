@@ -93,12 +93,37 @@ body {
   );
 }
 
-
 * {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
-body, html, #root, .app {
+body,
+html,
+#root,
+.app {
   height: 100%;
   width: 100%;
+}
+
+.scrollable-div {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scrollable-div::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+@keyframes spin-180 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-spin-180 {
+  animation: spin-180 1s linear infinite;
 }

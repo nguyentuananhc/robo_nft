@@ -21,11 +21,10 @@ export interface CardItemInterface {
 }
 
 export enum TYPE {
-  ONSALE= 'onSale',
-  WORK='work',
-  WORKING='working',
-  UNBOX = 'Unbox'
-
+  ONSALE = 'onSale',
+  WORK = 'work',
+  WORKING = 'working',
+  UNBOX = 'Unbox',
 }
 
 const styleText = {
@@ -86,7 +85,7 @@ const buttonStyle = {
   onSale: {
     background: '#FFE8E9',
     borderRadius: '6px',
-    color: "#FA4856",
+    color: '#FA4856',
     width: '100%',
     fontWeight: 700,
     fontSize: 14,
@@ -102,7 +101,7 @@ const CardItem = ({
   onClick,
   selectedItem,
   onClickSelling,
-  type
+  type,
 }: {
   id?: string
   text1?: any
@@ -129,6 +128,7 @@ const CardItem = ({
             }),
       }}
       onClick={() => {
+        onClick()
         // if (isSelling && onClickSelling) {
         //   onClickSelling(id)
         // } else {
@@ -208,7 +208,7 @@ const CardItem = ({
               padding: 12,
             }}
           >
-           <ButtonBase style={buttonStyle.receive}>Working</ButtonBase>
+            <ButtonBase style={buttonStyle.receive}>Working</ButtonBase>
           </CardActions>
         </>
       )}
