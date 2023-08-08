@@ -34,6 +34,7 @@ const MyBubble = ({ text, time }) => {
         style={{
           borderRadius: "4px 0px 4px 4px",
           boxShadow: "0px 0px 10px 0px rgba(143, 174, 203, 0.40)",
+          whiteSpace: 'break-spaces',
         }}
       >
         <div className="flex gap-[6px] lg:flex-col lg:gap-1">
@@ -66,6 +67,7 @@ const BotBubble = ({ text, time }) => {
         style={{
           borderRadius: " 0px 4px 4px 4px",
           boxShadow: "0px 0px 10px 0px rgba(143, 174, 203, 0.40)",
+          whiteSpace: 'break-spaces',
         }}
       >
         <div className="flex gap-[6px] lg:flex-col lg:gap-1">
