@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import Container from '@components/Container'
-import Button from '@components/Button'
+import Container from 'components/Container'
+import Button from 'components/Button'
 import CloudStudioImage from '../components/CloudStudioImge'
 import { AnimatePresence } from 'framer-motion'
 import Subpage from '../components/subpage/Subpage'

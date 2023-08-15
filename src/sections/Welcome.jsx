@@ -1,10 +1,10 @@
 import React from 'react'
-import Container from '@components/Container'
-import Navbar from '@components/Navbar'
+import Container from 'components/Container'
+import Navbar from 'components/Navbar'
 
-import rectangle from '@assets/robo/rect.png'
-import robotmobile from '@assets/robo/robotmobile.png'
-import robo from '@assets/robo/robo.png'
+import rectangle from 'assets/robo/rect.png'
+import robotmobile from 'assets/robo/robotmobile.png'
+import robo from 'assets/robo/robo.png'
 
 const Welcome = () => {
   return (

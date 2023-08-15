@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef, useLayoutEffect } from 'react'
-import Container from '@components/Container'
+import Container from 'components/Container'
 import RoadmapCharacter from '../components/RoadmapCharacter'
 import TimeLine from '../components/TimeLine'
 import TimeLineCloud from '../components/TimeLineCloud'

@@ -8,11 +8,6 @@ import {
   createTheme,
 } from '@mui/material'
 import React, { useState } from 'react'
-import RobotoItem from '../../../assets/images/RobotoItem.png'
-import CardItem from '../CardItem'
-import modelA from '../../../assets/images/modelA.png'
-import modelB from '../../../assets/images/modelB.png'
-import modelC from '../../../assets/images/modelC.png'
 import closeIcon from '../../assets/images/close.png'
 
 const theme = createTheme({

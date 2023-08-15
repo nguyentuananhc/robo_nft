@@ -1,12 +1,12 @@
 import React from 'react'
-import robo1 from '@assets/robo/robot1.png'
-import robo2 from '@assets/robo/robot2.png'
-import robo3 from '@assets/robo/robot3.png'
-import robo4 from '@assets/robo/robot4.png'
-import robo5 from '@assets/robo/robot5.png'
-import robo6 from '@assets/robo/robot6.png'
-import robo7 from '@assets/robo/robot7.png'
-import robo8 from '@assets/robo/robot8.png'
+import robo1 from 'assets/robo/robot1.png'
+import robo2 from 'assets/robo/robot2.png'
+import robo3 from 'assets/robo/robot3.png'
+import robo4 from 'assets/robo/robot4.png'
+import robo5 from 'assets/robo/robot5.png'
+import robo6 from 'assets/robo/robot6.png'
+import robo7 from 'assets/robo/robot7.png'
+import robo8 from 'assets/robo/robot8.png'
 
 const LIST = [
   { name: 'Home Assist', img: robo1, status: 'active' },

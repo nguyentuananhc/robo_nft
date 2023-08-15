@@ -5,7 +5,7 @@ import TimeLineCardHeading from './TimeLineCardHeading'
 import TimeLineCardTime from './TimeLineCardTime'
 import TimeLineCloud from './TimeLineCloud'
 import TimeLineTick from './TimeLineTick'
-import rainbow from '@assets/images/rainbow.svg'
+import rainbow from 'assets/images/rainbow.svg'
 
 const TimeLine = React.forwardRef(({ lineWidth }, ref) => {
   return (

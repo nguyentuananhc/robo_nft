@@ -1,12 +1,12 @@
 import React from 'react'
-import chart from '@assets/robo/chartToken.png'
-import chart40 from '@assets/robo/chart40.png'
-import chart20 from '@assets/robo/chart20.png'
-import chart18 from '@assets/robo/chart18.png'
-import chart10 from '@assets/robo/chart10.png'
-import chart7 from '@assets/robo/chart7.png'
-import chart5 from '@assets/robo/chart5.png'
-import tokenRobot from '@assets/robo/token.png'
+import chart from 'assets/robo/chartToken.png'
+import chart40 from 'assets/robo/chart40.png'
+import chart20 from 'assets/robo/chart20.png'
+import chart18 from 'assets/robo/chart18.png'
+import chart10 from 'assets/robo/chart10.png'
+import chart7 from 'assets/robo/chart7.png'
+import chart5 from 'assets/robo/chart5.png'
+import tokenRobot from '../assets/robo/token.png'
 
 function Token() {
   const [chartToken, setChartToken] = React.useState(chart)
@@ -60,10 +60,10 @@ function Token() {
           src={chartToken}
         />
         <div
-          className="xs:bg-none mx-auto flex w-full flex-col items-center bg-[url(${tokenRobot})] px-4 py-9 text-center xl:items-start xl:px-36 xl:pt-14 xl:text-left"
+          className={`xs:bg-none mx-auto flex w-full flex-col items-center px-4 py-9 text-center xl:items-start xl:px-36 xl:pt-14 xl:text-left`}
           style={
             {
-              // backgroundImage: `url(${tokenRobot})`,
+              backgroundImage: `url(${tokenRobot})`,
               // backgroundRepeat: 'no-repeat',
               // backgroundPosition: 'right bottom',
               // backgroundSize: 'contain',

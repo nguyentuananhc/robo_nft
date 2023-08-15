@@ -1,8 +1,8 @@
 import React from 'react'
-import studio from '@assets/images/cloud-studio.png'
-import big from '@assets/images/studio-big-cloud.svg'
-import right from '@assets/images/studio-right-cloud.svg'
-import left from '@assets/images/studio-left-cloud.svg'
+import studio from 'assets/images/cloud-studio.png'
+import big from 'assets/images/studio-big-cloud.svg'
+import right from 'assets/images/studio-right-cloud.svg'
+import left from 'assets/images/studio-left-cloud.svg'
 import { useMouseCoordinates } from '@hooks/useMouseCoordinates'
 
 const CloudStudioImage = () => {

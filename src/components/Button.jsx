@@ -1,5 +1,5 @@
 import React from 'react'
-import triangle from '@assets/images/triangle.svg'
+import triangle from 'assets/images/triangle.svg'
 
 const Button = ({ children, ...props }) => {
   return (

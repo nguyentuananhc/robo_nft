@@ -1,4 +1,4 @@
-import logo from '@assets/images/logo.svg'
+import logo from 'assets/images/logo.svg'
 import { motion, AnimatePresence } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 
@@ -13,7 +13,7 @@ import {
   FB,
   Youtube,
   BlueBird,
-} from '@components/icons'
+} from 'components/icons'
 
 const NAV = [
   { name: 'Home', icon: <Home /> },

@@ -63,7 +63,7 @@ const titleStyle = {
   lineHeight: '12px',
 }
 
-const valueStyle = {
+const valueStyle: any = {
   fontSize: {
     lg: '14px',
     xs: '12px',

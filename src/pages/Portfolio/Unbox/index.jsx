@@ -1,6 +1,6 @@
 import React from 'react'
-import RobotBox from '@assets/images/robot-box.png'
-import RobotThumb from '@assets/images/robot-thumb.png'
+import RobotBox from 'assets/images/robot-box.png'
+import RobotThumb from 'assets/images/robot-thumb.png'
 import Robot from './Robot'
 
 const Loading = () => (

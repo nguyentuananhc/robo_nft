@@ -1,7 +1,7 @@
 import React from 'react'
 import Container from '../Container'
 import Button from '../Button'
-import logo from '@assets/images/logo.svg'
+import logo from 'assets/images/logo.svg'
 
 const SubpageHeroText = ({ onExploreClick, onBack }) => {
   return (

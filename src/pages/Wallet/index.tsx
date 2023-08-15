@@ -1,7 +1,6 @@
 import {
   Box,
   ButtonBase,
-  Divider,
   Modal,
   ThemeProvider,
   Typography,
@@ -9,8 +8,6 @@ import {
 } from '@mui/material'
 import React, { useState } from 'react'
 import closeIcon from '../../assets/images/close.png'
-import { InputBase } from '@mui/material'
-import { IOSSwitch } from '../../../components/Switch'
 import metamask from '../../assets/images/metamask.png'
 import USDTIcon from '../../assets/images/USDTIcon.png'
 

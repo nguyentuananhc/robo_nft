@@ -1,7 +1,7 @@
 import { Box, Chip, Grid } from '@mui/material'
 import React from 'react'
 import CardItem from '../CardItem'
-import UnBox from '../UnBox'
+import UnBox from '../Unbox'
 
 const TYPE = ['Unbox']
 

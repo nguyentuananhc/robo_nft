@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import Container from '@components/Container'
+import Container from 'components/Container'
 import { Accordion } from 'flowbite-react'
 
 const Faq = () => {

@@ -1,11 +1,11 @@
-import Container from '@components/Container'
+import Container from 'components/Container'
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import character from '@assets/images/collection-char.png'
-import cloud from '@assets/images/collection-cloud.svg'
+import character from 'assets/images/collection-char.png'
+import cloud from 'assets/images/collection-cloud.svg'
 import clsx from 'clsx'
 
 const Tab = ({ children }) => {

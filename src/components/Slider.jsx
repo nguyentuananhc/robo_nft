@@ -1,6 +1,6 @@
 import React from 'react'
-import slider from '@assets/robo/slider.png'
-import { LeftArrow, RightArrow } from '@components/icons'
+import slider from 'assets/robo/slider.png'
+import { LeftArrow, RightArrow } from 'components/icons'
 
 function SliderSection() {
   return (

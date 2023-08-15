@@ -1,7 +1,7 @@
 import React from 'react'
 
-import character from '@assets/images/roadmap-character.png'
-import cloud from '@assets/images/collection-cloud.svg'
+import character from 'assets/images/roadmap-character.png'
+import cloud from 'assets/images/collection-cloud.svg'
 
 const RoadmapCharacter = React.forwardRef((props, ref) => {
   return (

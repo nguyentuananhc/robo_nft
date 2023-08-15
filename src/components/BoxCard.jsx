@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import React from 'react'
-import character from '@assets/images/boxes-character.png'
+import character from 'assets/images/boxes-character.png'
 
 const BoxCard = ({ img, className, ...props }) => {
   return (

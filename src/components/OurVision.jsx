@@ -1,5 +1,5 @@
 import React from 'react'
-import bgVision from '@assets/robo/bg-vision.png'
+import bgVision from 'assets/robo/bg-vision.png'
 import Marquee from 'react-fast-marquee'
 
 const LIST = [

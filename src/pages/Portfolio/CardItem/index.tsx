@@ -131,7 +131,10 @@ const CardItem = ({
             }),
       }}
       onClick={() => {
-        onClick()
+        if (onClick) {
+          onClick()
+        }
+        
         // if (isSelling && onClickSelling) {
         //   onClickSelling(id)
         // } else {

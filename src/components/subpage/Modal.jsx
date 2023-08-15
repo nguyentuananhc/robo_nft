@@ -1,10 +1,10 @@
-import close from '@assets/images/close.svg'
+import close from 'assets/images/close.svg'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'framer-motion'
 import React, { useState } from 'react'
 import ScrollContainer from 'react-indiana-drag-scroll'
 import ShadowText from '../ShadowText'
-import cloud from '@assets/images/boxes-cloud-top.svg'
+import cloud from 'assets/images/boxes-cloud-top.svg'
 import Floating from '../Floating'
 
 const Modal = ({ open, onClose, title, tabs = [] }) => {

@@ -1,10 +1,10 @@
 import React from 'react'
 
-import telegram from '@assets/images/telegram.svg'
-import twitter from '@assets/images/twitter.svg'
-import discord from '@assets/images/discord.svg'
-import miniRobo from '@assets/robo/robomini.png'
-import robotmobile from '@assets/robo/robotmobile.png'
+import telegram from 'assets/images/telegram.svg'
+import twitter from 'assets/images/twitter.svg'
+import discord from 'assets/images/discord.svg'
+import miniRobo from 'assets/robo/robomini.png'
+import robotmobile from 'assets/robo/robotmobile.png'
 
 const Footer = () => {
   const [isMobile, setIsMobile] = React.useState(false)

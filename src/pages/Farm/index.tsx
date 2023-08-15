@@ -8,11 +8,10 @@ import {
   outlinedInputClasses,
   selectClasses,
 } from '@mui/material'
-import BuyTab from './BuyTab'
-import { CardItemInterface } from './CardItem'
-import SellTab from './SellTab'
+
 import PoolsTab from './PoolsTab'
 import YourStakingTab from './YourStakingTab'
+import { CardItemInterface } from '../ToolWork'
 
 export enum TYPE {
   POOLS = 'Pools',

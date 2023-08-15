@@ -1,5 +1,5 @@
 import React from 'react'
-import robotRoadMap from '@assets/robo/robotroadmap.png'
+import robotRoadMap from 'assets/robo/robotroadmap.png'
 
 function RoadMap() {
   return (

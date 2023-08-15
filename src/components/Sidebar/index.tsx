@@ -159,8 +159,7 @@ export const CustomListItemButton = styled(ListItemButton, {
 
 export const CustomListItem = styled(ListItem)(() => ({}))
 
-export const handleDisplayMenuItem = (item: MenuItem) => {
-  const location = useLocation()
+export const handleDisplayMenuItem = (item: MenuItem, location) => {
 
   return (
     <CustomListItem
@@ -226,6 +225,8 @@ const Sidebar = () => {
     setMobileOpen(!mobileOpen)
   }
 
+  const location = useLocation();
+
   const { openMobile, handleToggle } = useContext(DappContext)
 
   const drawer = (
@@ -275,7 +276,7 @@ const Sidebar = () => {
                 {item?.children ? (
                   <GroupMenu item={item} />
                 ) : (
-                  handleDisplayMenuItem(item)
+                  handleDisplayMenuItem(item, location)
                 )}
               </React.Fragment>
             ))}

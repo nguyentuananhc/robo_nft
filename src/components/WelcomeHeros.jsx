@@ -1,8 +1,8 @@
 import React from 'react'
-import hero from '@assets/images/welcome-hero.png'
-import a from '@assets/images/welcome-hero-a.svg'
-import b from '@assets/images/welcome-hero-b.png'
-import c from '@assets/images/welcome-hero-c.png'
+import hero from 'assets/images/welcome-hero.png'
+import a from 'assets/images/welcome-hero-a.svg'
+import b from 'assets/images/welcome-hero-b.png'
+import c from 'assets/images/welcome-hero-c.png'
 import clsx from 'clsx'
 
 const WelcomeHeros = ({ className, ...props }) => {

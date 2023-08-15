@@ -1,6 +1,6 @@
 import React from 'react'
 
-import cloud from '@assets/images/collection-cloud.svg'
+import cloud from 'assets/images/collection-cloud.svg'
 
 const TimeLineCloud = () => {
   return (
